@@ -1,0 +1,10 @@
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\bin\Debug\Tic-Tac-ToeGame.exe.config
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\bin\Debug\Tic-Tac-ToeGame.exe
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\bin\Debug\Tic-Tac-ToeGame.pdb
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic-Tac-ToeGame.csproj.AssemblyReference.cache
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic_Tac_ToeGame.TicTacToeGame.resources
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic_Tac_ToeGame.Properties.Resources.resources
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic-Tac-ToeGame.csproj.GenerateResource.cache
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic-Tac-ToeGame.csproj.CoreCompileInputs.cache
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic-Tac-ToeGame.exe
+C:\Users\Abdelaziz\source\Tic-Tac-ToeGame\obj\Debug\Tic-Tac-ToeGame.pdb
