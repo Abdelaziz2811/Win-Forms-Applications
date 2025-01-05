@@ -1,0 +1,10 @@
+C:\Users\Abdelaziz\source\BMICalculator\bin\Debug\BMICalculator.exe.config
+C:\Users\Abdelaziz\source\BMICalculator\bin\Debug\BMICalculator.exe
+C:\Users\Abdelaziz\source\BMICalculator\bin\Debug\BMICalculator.pdb
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.csproj.AssemblyReference.cache
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.BMICalculator.resources
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.Properties.Resources.resources
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.csproj.GenerateResource.cache
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.csproj.CoreCompileInputs.cache
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.exe
+C:\Users\Abdelaziz\source\BMICalculator\obj\Debug\BMICalculator.pdb
