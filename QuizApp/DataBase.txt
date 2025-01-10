@@ -1,0 +1,15 @@
+DBMS and RDBMS are the same#false
+DBMS stands for database management system#true
+DBMS has relations between Data#false#false
+RDBMS has relations between data#true
+RDBMS stands for relational database management system#true
+DBMS has two types : None relational database and relational database#true
+File System and XML are samples of RDBMS#false#false
+File System and XML are samples of DBMS#true
+SQL Server , Oracle , MySQL are samples of RDBMS#true
+Dealing with RDBMS is much easier than DBMS#true
+In RDBMS : Data that is stored in an organized fashion in tables containing rows (entity - record) and Columns (Field - Attribute) along with relations between these tables#true
+Column/Field/Attribute are the same#true
+Row/Entity/Record are the same#true
+Table/Entity Set are the same#true
+Relationships are represented using references to data from other tables#true

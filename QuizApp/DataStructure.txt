@@ -1,0 +1,11 @@
+Data Structure is the same as data base#false
+Data Structure in computer programming is a way of organizing and storing data to ease the accessing and modification of data#true
+Data Base is a collection of data that is stored in an organized fashion in a table containing rows and columns using a software package known as Data base Management System (DBMS)#true
+DBMS is used to modify, define, manipulate and manage data. some examples of DBMS are : MySQL, Oracle Data base and Microsoft Access#true
+Some commonly used data structures are Array, Linked List, Stack, Queue, Heap, Binary Tree and Graph.#true
+Data in Data base is stored in RAM inside the program#false
+Data in data structure is stored in RAM inside the program#true
+Structured Query Language (SQL) is used to perform operations on the data in Data base#true
+Programming languages C++, Python, Java, are used to perform operations using data structures#true
+Examples of Data Structures : MySQL, Oracle, MongoDB, Sybase etc.#false
+Examples of DBMS (Data Base) : MySQL, Oracle, MongoDB, Sybase , SQL Server, Access etc.#true

@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66EF6671-988D-4EB7-8457-4F1DAE003D1F}|QuizApp.csproj|c:\\users\\abdelaziz\\source\\repos\\quizapp\\quizapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EF6671-988D-4EB7-8457-4F1DAE003D1F}|QuizApp.csproj|solutionrelative:quizapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EF6671-988D-4EB7-8457-4F1DAE003D1F}|QuizApp.csproj|C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\quizapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66EF6671-988D-4EB7-8457-4F1DAE003D1F}|QuizApp.csproj|solutionrelative:quizapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuizApp.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\QuizApp.cs",
+              "RelativeDocumentMoniker": "QuizApp.cs",
+              "ToolTip": "C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\QuizApp.cs",
+              "RelativeToolTip": "QuizApp.cs",
+              "ViewState": "AgIAAMoAAACAOTMzMzMbwI8AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T14:33:43.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuizApp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\QuizApp.cs",
+              "RelativeDocumentMoniker": "QuizApp.cs",
+              "ToolTip": "C:\\Users\\Abdelaziz\\source\\repos\\QuizApp\\QuizApp.cs [Design]",
+              "RelativeToolTip": "QuizApp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T13:47:04.144Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

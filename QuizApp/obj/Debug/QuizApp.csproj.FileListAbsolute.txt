@@ -1,0 +1,10 @@
+C:\Users\Abdelaziz\source\repos\QuizApp\bin\Debug\QuizApp.exe.config
+C:\Users\Abdelaziz\source\repos\QuizApp\bin\Debug\QuizApp.exe
+C:\Users\Abdelaziz\source\repos\QuizApp\bin\Debug\QuizApp.pdb
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.csproj.AssemblyReference.cache
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.Properties.Resources.resources
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.QuizApp.resources
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.csproj.GenerateResource.cache
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.csproj.CoreCompileInputs.cache
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.exe
+C:\Users\Abdelaziz\source\repos\QuizApp\obj\Debug\QuizApp.pdb
