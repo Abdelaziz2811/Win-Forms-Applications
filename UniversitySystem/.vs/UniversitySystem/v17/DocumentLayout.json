@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|c:\\users\\abdelaziz\\source\\repos\\universitysystem\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogInForm.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\LogInForm.cs",
+              "RelativeDocumentMoniker": "LogInForm.cs",
+              "ToolTip": "C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\LogInForm.cs",
+              "RelativeToolTip": "LogInForm.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAswIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T20:31:36.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogInForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\LogInForm.cs",
+              "RelativeDocumentMoniker": "LogInForm.cs",
+              "ToolTip": "C:\\Users\\Abdelaziz\\source\\repos\\UniversitySystem\\LogInForm.cs [Design]",
+              "RelativeToolTip": "LogInForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T20:02:46.729Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

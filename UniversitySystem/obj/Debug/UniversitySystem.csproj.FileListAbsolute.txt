@@ -1,0 +1,10 @@
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\UniversitySystem.exe.config
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\UniversitySystem.exe
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\UniversitySystem.pdb
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.csproj.AssemblyReference.cache
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.LogInForm.resources
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.Properties.Resources.resources
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.csproj.GenerateResource.cache
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.csproj.CoreCompileInputs.cache
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.exe
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.pdb
