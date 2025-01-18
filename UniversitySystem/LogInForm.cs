@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UniversitySystem.Properties;
 
 namespace UniversitySystem
 {
@@ -117,14 +118,16 @@ namespace UniversitySystem
                 if (!IsUserRegistered())
                     return;
 
-                MessageBox.Show("User is registered");
+                Form Frm = new MainScreen();
+                Frm.ShowDialog();
             }
             else
             {
                 if (!IsUserRegistered())
                     return;
 
-                MessageBox.Show("User is registered");
+                Form Frm = new MainScreen();
+                Frm.ShowDialog();
             }
         }
 
@@ -138,6 +141,22 @@ namespace UniversitySystem
         {
             if (string.IsNullOrWhiteSpace(TxTBUserName.Text) && string.IsNullOrWhiteSpace(TxTBPassword.Text))
                 RemeberedUsers();
+        }
+
+        private void BTNShowHide_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToString(BTNShowHide.Tag) == "show")
+            {
+                TxTBPassword.PasswordChar = TxTBUserName.PasswordChar;
+                BTNShowHide.Image = Resources.hide;
+                BTNShowHide.Tag = "hide";
+            }
+            else
+            {
+                TxTBPassword.PasswordChar = '•';
+                BTNShowHide.Image = Resources.show;
+                BTNShowHide.Tag = "show";
+            }
         }
     }
 }

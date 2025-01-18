@@ -29,55 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
-            this.TxTBUserName = new System.Windows.Forms.TextBox();
-            this.TxTBPassword = new System.Windows.Forms.TextBox();
-            this.BTNLogin = new System.Windows.Forms.Button();
             this.CBRememberMe = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxTBUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TxTBPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BTNLogin = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.BTNShowHide = new Guna.UI2.WinForms.Guna2ImageButton();
             this.SuspendLayout();
-            // 
-            // TxTBUserName
-            // 
-            this.TxTBUserName.Location = new System.Drawing.Point(33, 226);
-            this.TxTBUserName.Name = "TxTBUserName";
-            this.TxTBUserName.Size = new System.Drawing.Size(205, 20);
-            this.TxTBUserName.TabIndex = 0;
-            this.TxTBUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxTBUserName.MouseEnter += new System.EventHandler(this.TxTBUserName_MouseEnter);
-            // 
-            // TxTBPassword
-            // 
-            this.TxTBPassword.Location = new System.Drawing.Point(33, 256);
-            this.TxTBPassword.Name = "TxTBPassword";
-            this.TxTBPassword.PasswordChar = '•';
-            this.TxTBPassword.Size = new System.Drawing.Size(205, 20);
-            this.TxTBPassword.TabIndex = 1;
-            this.TxTBPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxTBPassword.MouseEnter += new System.EventHandler(this.TxTBPassword_MouseEnter);
-            // 
-            // BTNLogin
-            // 
-            this.BTNLogin.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.BTNLogin.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.BTNLogin.FlatAppearance.BorderSize = 2;
-            this.BTNLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.BTNLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BTNLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNLogin.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNLogin.Location = new System.Drawing.Point(33, 282);
-            this.BTNLogin.Name = "BTNLogin";
-            this.BTNLogin.Size = new System.Drawing.Size(205, 42);
-            this.BTNLogin.TabIndex = 2;
-            this.BTNLogin.Text = "Log In";
-            this.BTNLogin.UseVisualStyleBackColor = false;
-            this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
             // 
             // CBRememberMe
             // 
             this.CBRememberMe.AutoSize = true;
             this.CBRememberMe.Font = new System.Drawing.Font("Sitka Subheading", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBRememberMe.Location = new System.Drawing.Point(33, 330);
+            this.CBRememberMe.Location = new System.Drawing.Point(89, 346);
             this.CBRememberMe.Name = "CBRememberMe";
             this.CBRememberMe.Size = new System.Drawing.Size(109, 23);
             this.CBRememberMe.TabIndex = 3;
@@ -90,24 +56,127 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Font = new System.Drawing.Font("Sitka Subheading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(28, 113);
+            this.label1.Location = new System.Drawing.Point(39, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 90);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome to UTech\r\nSign into your account\r\n\r\n";
+            this.label1.Text = "   Welcome to UTech\r\nSign into your account\r\n\r\n";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Sitka Subheading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(28, 18);
+            this.label2.Location = new System.Drawing.Point(115, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "UTech\r";
+            // 
+            // TxTBUserName
+            // 
+            this.TxTBUserName.Animated = true;
+            this.TxTBUserName.BackColor = System.Drawing.SystemColors.Window;
+            this.TxTBUserName.BorderRadius = 15;
+            this.TxTBUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxTBUserName.DefaultText = "";
+            this.TxTBUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxTBUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxTBUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxTBUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxTBUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxTBUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxTBUserName.ForeColor = System.Drawing.Color.Black;
+            this.TxTBUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxTBUserName.Location = new System.Drawing.Point(44, 181);
+            this.TxTBUserName.Name = "TxTBUserName";
+            this.TxTBUserName.PasswordChar = '\0';
+            this.TxTBUserName.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TxTBUserName.PlaceholderText = "Username";
+            this.TxTBUserName.SelectedText = "";
+            this.TxTBUserName.Size = new System.Drawing.Size(205, 36);
+            this.TxTBUserName.TabIndex = 8;
+            this.TxTBUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxTBUserName.MouseEnter += new System.EventHandler(this.TxTBUserName_MouseEnter);
+            // 
+            // TxTBPassword
+            // 
+            this.TxTBPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.TxTBPassword.BorderRadius = 15;
+            this.TxTBPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxTBPassword.DefaultText = "";
+            this.TxTBPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxTBPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxTBPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxTBPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxTBPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxTBPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxTBPassword.ForeColor = System.Drawing.Color.Black;
+            this.TxTBPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxTBPassword.Location = new System.Drawing.Point(44, 236);
+            this.TxTBPassword.Name = "TxTBPassword";
+            this.TxTBPassword.PasswordChar = '•';
+            this.TxTBPassword.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TxTBPassword.PlaceholderText = "Password";
+            this.TxTBPassword.SelectedText = "";
+            this.TxTBPassword.Size = new System.Drawing.Size(205, 36);
+            this.TxTBPassword.TabIndex = 9;
+            this.TxTBPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxTBPassword.MouseEnter += new System.EventHandler(this.TxTBPassword_MouseEnter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(241, 380);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "\r\n                                                          \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r" +
+    "\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
+            // 
+            // BTNLogin
+            // 
+            this.BTNLogin.BackColor = System.Drawing.Color.Transparent;
+            this.BTNLogin.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.BTNLogin.BorderRadius = 15;
+            this.BTNLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNLogin.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.BTNLogin.FillColor2 = System.Drawing.Color.DeepSkyBlue;
+            this.BTNLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.BTNLogin.ForeColor = System.Drawing.Color.Black;
+            this.BTNLogin.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.BTNLogin.Location = new System.Drawing.Point(44, 291);
+            this.BTNLogin.Name = "BTNLogin";
+            this.BTNLogin.Size = new System.Drawing.Size(205, 36);
+            this.BTNLogin.TabIndex = 11;
+            this.BTNLogin.Text = "Log in";
+            this.BTNLogin.UseTransparentBackground = true;
+            this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
+            // 
+            // BTNShowHide
+            // 
+            this.BTNShowHide.BackColor = System.Drawing.SystemColors.Window;
+            this.BTNShowHide.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BTNShowHide.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.BTNShowHide.Image = global::UniversitySystem.Properties.Resources.show;
+            this.BTNShowHide.ImageOffset = new System.Drawing.Point(0, 0);
+            this.BTNShowHide.ImageRotate = 0F;
+            this.BTNShowHide.ImageSize = new System.Drawing.Size(16, 16);
+            this.BTNShowHide.Location = new System.Drawing.Point(217, 244);
+            this.BTNShowHide.Name = "BTNShowHide";
+            this.BTNShowHide.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.BTNShowHide.Size = new System.Drawing.Size(23, 21);
+            this.BTNShowHide.TabIndex = 12;
+            this.BTNShowHide.Tag = "show";
+            this.BTNShowHide.Click += new System.EventHandler(this.BTNShowHide_Click);
             // 
             // LogInForm
             // 
@@ -116,12 +185,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.CBRememberMe);
+            this.Controls.Add(this.BTNShowHide);
             this.Controls.Add(this.BTNLogin);
             this.Controls.Add(this.TxTBPassword);
             this.Controls.Add(this.TxTBUserName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CBRememberMe);
+            this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
             this.Name = "LogInForm";
             this.Text = "Log in";
@@ -131,13 +202,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxTBUserName;
-        private System.Windows.Forms.TextBox TxTBPassword;
-        private System.Windows.Forms.Button BTNLogin;
         private System.Windows.Forms.CheckBox CBRememberMe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox TxTBUserName;
+        private Guna.UI2.WinForms.Guna2TextBox TxTBPassword;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2GradientButton BTNLogin;
+        private Guna.UI2.WinForms.Guna2ImageButton BTNShowHide;
     }
 }
 

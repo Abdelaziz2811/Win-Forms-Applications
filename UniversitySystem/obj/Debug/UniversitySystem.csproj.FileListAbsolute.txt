@@ -8,3 +8,9 @@ C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.cspr
 C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.csproj.CoreCompileInputs.cache
 C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.exe
 C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.pdb
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.MainScreen.resources
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\Guna.UI2.dll
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\Universi.69898E8C.Up2Date
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\ar\UniversitySystem.resources.dll
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.MainScreen.ar.resources
+C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\ar\UniversitySystem.resources.dll
