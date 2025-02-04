@@ -1,0 +1,30 @@
+AI101#Artificial Intelligence#PROF004#Computer Science#45#3#Advanced study of AI algorithms and machine learning principles by Prof. Jane Smith
+DS202#Data Science#PROF075#Computer Science#48#4#Comprehensive data analysis and statistical modeling techniques by Prof. James Davis
+SE301#Software Engineering#PROF054#Computer Science#42#3#Software development lifecycle and agile methodologies by Prof. Mike Taylor
+MB401#Microbiology#PROF023#Biology#45#4#Microscopic organism study and cellular processes by Prof. Laura Davis
+BT201#Botany#PROF041#Biology#40#3#Plant biology and ecosystem research methods by Prof. Anna Taylor
+GN302#Genetics#PROF042#Biology#48#4#Genetic inheritance and molecular genetics by Prof. Chris Brown
+QP401#Quantum Physics#PROF050#Physics#50#4#Quantum mechanics and quantum computing principles by Prof. Jane Martinez
+TH301#Thermodynamics#PROF011#Physics#42#3#Energy transfer and thermal systems by Prof. Sarah Brown
+AP201#Astrophysics#PROF033#Physics#45#3#Celestial mechanics and stellar evolution by Prof. Laura Davis
+ALG101#Algebra#PROF016#Mathematics#40#3#Linear and abstract algebra by Prof. Mike Brown
+CAL201#Calculus#PROF061#Mathematics#48#4#Advanced calculus and mathematical analysis by Prof. Emily Martinez
+ST302#Statistics#PROF063#Mathematics#42#3#Probability theory and statistical inference by Prof. Alex Brown
+ME401#Mechanical Engineering#PROF002#Engineering#50#4#Design and mechanical systems principles by Prof. James Clark
+CE301#Civil Engineering#PROF090#Engineering#45#3#Structural design and infrastructure engineering by Prof. Anna Martinez
+EE201#Electrical Engineering#PROF013#Engineering#42#3#Circuit theory and electrical system design by Prof. Laura Lewis
+MCR201#Macroeconomics#PROF062#Economics#40#3#National economic systems and policy analysis by Prof. Sarah Smith
+MCE302#Microeconomics#PROF060#Economics#42#3#Individual market dynamics and economic decision-making by Prof. James Martinez
+IT401#International Trade#PROF043#Economics#45#4#Global economic interactions and trade policies by Prof. John Lewis
+CP301#Clinical Psychology#PROF020#Psychology#45#3#Psychological assessment and clinical interventions by Prof. John Taylor
+DP201#Developmental Psychology#PROF044#Psychology#40#3#Human growth and development across lifespan by Prof. Sarah Taylor
+CG302#Cognitive Psychology#PROF038#Psychology#42#3#Mental processes and cognitive research by Prof. James Doe
+VA101#Visual Arts#PROF057#Art#45#3#Drawing and visual composition techniques by Prof. Jane Clark
+DA201#Digital Arts#PROF056#Art#48#4#Digital design and multimedia art by Prof. Emily Davis
+SC301#Sculpture#PROF015#Art#42#3#3D art creation and sculptural techniques by Prof. John Lewis
+OC401#Organic Chemistry#PROF069#Chemistry#50#4#Organic compound chemistry and synthesis by Prof. Chris Martinez
+IC302#Inorganic Chemistry#PROF067#Chemistry#45#3#Non-carbon element chemistry and molecular structures by Prof. Laura Martinez
+BC201#Biochemistry#PROF018#Chemistry#48#4#Chemical processes in biological systems by Prof. Chris Lewis
+AH101#Ancient History#PROF032#History#40#3#Classical civilizations and archaeological studies by Prof. Chris Davis
+MH201#Modern History#PROF070#History#42#3#20th-century global historical developments by Prof. Sarah Smith
+WH302#World History#PROF052#History#45#4#Comprehensive global historical perspectives by Prof. Anna Doe

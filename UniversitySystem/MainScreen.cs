@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UniversitySystem.Properties;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UniversitySystem
 {
@@ -38,7 +41,6 @@ namespace UniversitySystem
             public string GPA;
             public double CreditsEarned;
             public string Achievements;
-            public bool MarkForDelete;
         }
 
         StStudents GetStudentRecord(string[] StudentInfo)
@@ -61,7 +63,6 @@ namespace UniversitySystem
             Student.GPA = StudentInfo[13];
             Student.CreditsEarned = Convert.ToDouble(StudentInfo[14]);
             Student.Achievements = StudentInfo[15];
-            Student.MarkForDelete = false;
 
             return Student;
         }
@@ -90,18 +91,7 @@ namespace UniversitySystem
         private void MainScreen_Load(object sender, EventArgs e)
         {
             LStudentsRecords = GetStudentsRecords();
-        }
-
-        void SetColumnsForStudentsList()
-        {
-            LVStudentsList.Columns.Add(Text = "ID", Width = 100);
-            LVStudentsList.Columns.Add(Text = "First Name", Width = 109);
-            LVStudentsList.Columns.Add(Text = "Last Name", Width = 110);
-            LVStudentsList.Columns.Add(Text = "Gender", Width = 100);
-            LVStudentsList.Columns.Add(Text = "Email", Width = 200);
-
-            this.Width = 816;
-            this.Height = 489;
+            LProfessorsRecords = GetProfessorRecords();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,49 +110,74 @@ namespace UniversitySystem
                 MessageBox.Show("Please select a student to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        string ConvertStudentDataToDataLine(StStudents Student)
+        {
+            string DataLine = string.Empty;
+
+            DataLine += Student.FirstName + '#';
+            DataLine += Student.LastName + '#';
+            DataLine += Student.BirthDate + '#';
+            DataLine += Student.Gender.ToString() + '#';
+            DataLine += Student.City + '#';
+            DataLine += Student.State + '#';
+            DataLine += Student.PostalCode + '#';
+            DataLine += Student.Country + '#';
+            DataLine += Student.Phone + '#';
+            DataLine += Student.Email + '#';
+            DataLine += Student.ID + '#';
+            DataLine += Student.Major + '#';
+            DataLine += Student.YearOfStudy + '#';
+            DataLine += Student.GPA + '#';
+            DataLine += Student.CreditsEarned.ToString() + '#';
+            DataLine += Student.Achievements;
+
+            return DataLine;
+        }
+
         void SaveChangesToFile()
         {
+            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt");
 
+            foreach (StStudents Student in LStudentsRecords)
+            {
+                if (LVStudentsList.SelectedItems[0].SubItems[0].Text != Student.ID)
+                {
+                    Writer.WriteLine(ConvertStudentDataToDataLine(Student));
+                }
+            }
+
+            Writer.Close();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (LVStudentsList.SelectedItems.Count == 1)
             {
-                
                 if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
+
                     SaveChangesToFile();
                     MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LVStudentsList.SelectedItems[0].Remove();
+                    RefreshStudentsListsViews();
                 }
                 else
                     MessageBox.Show("Saving changes is canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                LVStudentsList.SelectedItems[0].Remove();
             }
             else if (LVStudentsList.SelectedItems.Count > 1)
-            {
-                foreach (ListViewItem Item in LVStudentsList.SelectedItems)
-                {
-                    Item.Remove();
-                }
-                if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    SaveChangesToFile();
-                    MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                    MessageBox.Show("Saving changes is canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                MessageBox.Show("Multipule selection is not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show("Please select a student to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                MessageBox.Show("Please select a student to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         void ShowStudentsList()
         {
+            ListViewItem Item;
+
             foreach (StStudents Student in LStudentsRecords)
             {
-                ListViewItem Item = new ListViewItem(Student.ID);
+                Item = new ListViewItem(Student.ID);
 
                 Item.SubItems.Add(Student.FirstName);
                 Item.SubItems.Add(Student.LastName);
@@ -186,26 +201,12 @@ namespace UniversitySystem
                 return true;
         }
 
-        void SetColumnsForStudentsAcademicInfo()
-        {
-            LVAcademicInfo.Columns.Add(Text = "ID", Width = 100);
-            LVAcademicInfo.Columns.Add(Text = "First Name", Width = 75);
-            LVAcademicInfo.Columns.Add(Text = "Last Name", Width = 75);
-            LVAcademicInfo.Columns.Add(Text = "Major", Width = 100);
-            LVAcademicInfo.Columns.Add(Text = "Year of Study", Width = 100);
-            LVAcademicInfo.Columns.Add(Text = "GPA", Width = 75);
-            LVAcademicInfo.Columns.Add(Text = "Credits Earned", Width = 100);
-            LVAcademicInfo.Columns.Add(Text = "Achievement", Width = 200);
-            
-            this.Width = 816;
-            this.Height = 489;
-        }
-
         void ShowStudentsAcademicInfo()
         {
+            ListViewItem Item;
             foreach (StStudents Student in LStudentsRecords)
             {
-                ListViewItem Item = new ListViewItem(Student.ID);
+                Item = new ListViewItem(Student.ID);
 
                 Item.SubItems.Add(Student.FirstName);
                 Item.SubItems.Add(Student.LastName);
@@ -230,20 +231,6 @@ namespace UniversitySystem
                 return false;
             else 
                 return true;
-        }
-
-        void SetColumnsForStudentsPersonalInfo()
-        {
-            LVPersonalInfo.Columns.Add(Text = "ID", Width = 100);
-            LVPersonalInfo.Columns.Add(Text = "First Name", Width = 75);
-            LVPersonalInfo.Columns.Add(Text = "Last Name", Width = 75);
-            LVPersonalInfo.Columns.Add(Text = "Bith Date", Width = 100);
-            LVPersonalInfo.Columns.Add(Text = "Gender", Width = 92);
-            LVPersonalInfo.Columns.Add(Text = "City", Width = 75);
-            LVPersonalInfo.Columns.Add(Text = "Country", Width = 100);
-
-            this.Width = 816;
-            this.Height = 489;
         }
 
         bool IsLVPersonalInfoEmpty()
@@ -274,20 +261,6 @@ namespace UniversitySystem
 
                 LVPersonalInfo.Items.Add(Item);
             }
-        }
-
-        void SetColumnsForStudentsContactInfo()
-        {
-            LVContactInfo.Columns.Add(Text = "ID", Width = 100);
-            LVContactInfo.Columns.Add(Text = "First Name", Width = 75);
-            LVContactInfo.Columns.Add(Text = "Last Name", Width = 75);
-            LVContactInfo.Columns.Add(Text = "Phone", Width = 125);
-            LVContactInfo.Columns.Add(Text = "Email", Width = 150);
-            LVContactInfo.Columns.Add(Text = "State", Width = 100);
-            LVContactInfo.Columns.Add(Text = "Postal Code", Width = 75);
-
-            this.Width = 816;
-            this.Height = 489;
         }
 
         bool IsLVContactInfoEmpty()
@@ -350,7 +323,50 @@ namespace UniversitySystem
                     LBCredits.Text = Student.CreditsEarned.ToString();
                     LBAchievements.Text = Student.Achievements;
                     LBGPA.Text = Student.GPA;
-                    
+
+                    break;
+                }
+            }
+        }
+        
+        private void TXTBoxBirthDate_MouseEnter(object sender, EventArgs e)
+        {
+            MTXTBoxBirthDate.Visible = true;
+        }
+
+        private void TXTBoxBirthDate_Enter(object sender, EventArgs e)
+        {
+            MTXTBoxBirthDate.Visible = true;
+        }
+
+        void GetStudentsInfo()
+        {
+            foreach (StStudents Student in LStudentsRecords)
+            {
+                if (Student.ID == LVStudentsList.SelectedItems[0].SubItems[0].Text)
+                {
+                    TXTBUpdateFirstName.Text = Student.FirstName;
+                    TXTBUpdateLastName.Text = Student.LastName;
+                    TXTBUpdateGPA.Text = Student.GPA.ToString();
+                    TXTBUpdateCity.Text = Student.City;
+                    MTXTBUpdateCreditsEarned.Text = Student.CreditsEarned.ToString();
+                    TXTBUpdateEmail.Text = Student.Email;
+                    TXTBUpdatePostalCode.Text = Student.PostalCode;
+                    TXTBUpdateYearOfStudy.Text = Student.YearOfStudy;
+                    MTXTBUpdateBirthDate.Text = Student.BirthDate;
+
+                    if (Student.Gender == 'M')
+                        CBUpdateGender.Text = "Male";
+                    else if (Student.Gender == 'F')
+                        CBUpdateGender.Text = "Female";
+
+                        CBUpdateMajor.Text = Student.Major;
+                    TXTBUpdateState.Text = Student.State;
+                    TXTBUpdatePhone.Text = Student.Phone;
+                    TXTBUpdateCountry.Text = Student.Country;
+                    TXTBUpdateAchievements.Text = Student.Achievements;
+
+                    break;
                 }
             }
         }
@@ -364,7 +380,6 @@ namespace UniversitySystem
                     if (!IsLVStudentsEmpty())
                         return;
 
-                    SetColumnsForStudentsList();
                     ShowStudentsList();
 
                     break;
@@ -373,7 +388,6 @@ namespace UniversitySystem
                     if (!IsLVAcademicInfoEmpty())
                         return;
 
-                    SetColumnsForStudentsAcademicInfo();
                     ShowStudentsAcademicInfo();
 
                     break;
@@ -382,7 +396,6 @@ namespace UniversitySystem
                     if (!IsLVPersonalInfoEmpty())
                         return;
 
-                    SetColumnsForStudentsPersonalInfo();
                     ShowStudentsPersonalInfo();
 
                     break;
@@ -391,7 +404,6 @@ namespace UniversitySystem
                     if (!IsLVContactInfoEmpty())
                         return;
 
-                    SetColumnsForStudentsContactInfo();
                     ShowStudentsContactInfo();
 
                     break;
@@ -403,26 +415,706 @@ namespace UniversitySystem
                     GetStudentsMainInfo();
 
                     break;
-                case "Add":
-
-                    MessageBox.Show("Add");
-
-                    break;
                 case "Update":
 
-                    MessageBox.Show("Update");
+                    if (!IsSomeItemSelected())
+                        return;
+
+                    GetStudentsInfo();
 
                     break;
             }
         }
 
-        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        void RefreshStudentsListsViews()
         {
-            LVStudentsList.Clear();
-            SetColumnsForStudentsList();
+            LStudentsRecords = GetStudentsRecords();
+
+            // Refresh Students List
+            LVStudentsList.Items.Clear();
             ShowStudentsList();
+
+            // Refresh Students Acedemic Info
+            LVAcademicInfo.Items.Clear();
+            ShowStudentsAcademicInfo();
+
+            // Refresh Personal Info
+            LVPersonalInfo.Items.Clear();
+            ShowStudentsPersonalInfo();
+
+            // Refresh Contact Info
+            LVContactInfo.Items.Clear();
+            ShowStudentsContactInfo();
         }
 
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshStudentsListsViews();
+        }
 
+        string ConvertStudentDataToDataLine()
+        {
+            string StudentData = string.Empty;
+
+            StudentData += TXTBFirstName.Text + "#";
+            StudentData += TXTBLastName.Text + "#";
+            StudentData += MTXTBoxBirthDate.Text + "#";
+
+            if (CBGender.Text == "Male")
+                StudentData += "M#";
+            else if (CBGender.Text == "Female")
+                StudentData += "F#";
+
+            StudentData += TXTBCity.Text + "#";
+            StudentData += TXTBState.Text + "#";
+            StudentData += TXTBPostalCode.Text + "#";
+            StudentData += TXTBCountry.Text + "#";
+            StudentData += TXTBPhone.Text + "#";
+            StudentData += TXTBEmail.Text + "#";
+            StudentData += TXTBStudentID.Text + "#";
+            StudentData += CBMajor.Text + "#";
+            StudentData += "Freshman#";
+            StudentData += "0/0#";
+            StudentData += "0#";
+            StudentData += "No Achievements Yet";
+
+            return StudentData;
+        }
+
+        void SaveStudentInfoToFile()
+        {
+            File.AppendAllText(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt",
+                 ConvertStudentDataToDataLine() + "\n");  
+        }
+
+        void ClearTXTBoxes()
+        {
+            TXTBFirstName.Clear();
+            TXTBLastName.Clear();
+            MTXTBoxBirthDate.Clear();
+            TXTBPhone.Clear();
+            TXTBEmail.Clear();
+            TXTBStudentID.Clear();
+            TXTBCity.Clear();
+            TXTBState.Clear();
+            TXTBCountry.Clear();
+            TXTBPostalCode.Clear();
+        }
+
+        private void BTNAdd_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBFirstName.Text) || string.IsNullOrWhiteSpace(TXTBLastName.Text)
+                || string.IsNullOrWhiteSpace(MTXTBoxBirthDate.Text) || string.IsNullOrWhiteSpace(CBGender.Text)
+                || string.IsNullOrWhiteSpace(TXTBPhone.Text) || string.IsNullOrWhiteSpace(TXTBEmail.Text)
+                || string.IsNullOrWhiteSpace(TXTBStudentID.Text) || string.IsNullOrWhiteSpace(CBMajor.Text)
+                || string.IsNullOrWhiteSpace(TXTBCity.Text) || string.IsNullOrWhiteSpace(TXTBState.Text)
+                || string.IsNullOrWhiteSpace(TXTBCountry.Text) || string.IsNullOrWhiteSpace(TXTBPostalCode.Text)))
+            {
+                SaveStudentInfoToFile();
+                ClearTXTBoxes();
+                MessageBox.Show("Student added successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Student Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        StStudents UpdateStudentInfo(StStudents Student)
+        {
+            Student.FirstName = TXTBUpdateFirstName.Text;
+            Student.LastName = TXTBUpdateLastName.Text;
+
+            if (CBUpdateGender.Text == "Female")
+                Student.Gender = 'F';
+            else if (CBUpdateGender.Text == "Male")
+                Student.Gender = 'M';
+
+            Student.Major = CBUpdateMajor.Text;
+            Student.YearOfStudy = TXTBUpdateYearOfStudy.Text;
+            Student.GPA = TXTBUpdateGPA.Text;
+            Student.BirthDate = MTXTBUpdateBirthDate.Text;
+            Student.City = TXTBUpdateCity.Text;
+            Student.State = TXTBUpdateState.Text;
+            Student.CreditsEarned = Convert.ToDouble(MTXTBUpdateCreditsEarned.Text);
+            Student.Phone = TXTBUpdatePhone.Text;
+            Student.Email = TXTBUpdateEmail.Text;
+            Student.Country = TXTBUpdateCountry.Text;
+            Student.PostalCode = TXTBUpdatePostalCode.Text;
+            Student.Achievements = TXTBUpdateAchievements.Text;
+
+            return Student;
+        }
+
+        void SaveStudentInfoAfterUpdate()
+        {
+            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt");
+
+            foreach (StStudents Student in LStudentsRecords)
+            {
+                if (LVStudentsList.SelectedItems[0].SubItems[0].Text == Student.ID)
+                {
+                    Writer.WriteLine(ConvertStudentDataToDataLine(UpdateStudentInfo(Student)));
+                }
+                else
+                    Writer.WriteLine(ConvertStudentDataToDataLine(Student));
+            }
+
+            Writer.Close();
+        }
+
+        void ClearTXTBoxes_Update()
+        {
+            TXTBUpdateFirstName.Clear();
+            TXTBUpdateLastName.Clear();
+            TXTBUpdateYearOfStudy.Clear();
+            TXTBUpdateGPA.Clear();
+            MTXTBUpdateBirthDate.Clear();
+            TXTBUpdateCity.Clear();
+            TXTBUpdateState.Clear();
+            MTXTBUpdateCreditsEarned.Clear();
+            TXTBUpdatePhone.Clear();
+            TXTBUpdateEmail.Clear();
+            TXTBUpdateCountry.Clear();
+            TXTBUpdatePostalCode.Clear();
+            TXTBUpdateAchievements.Clear();
+        }
+
+        private void BTNUpdate_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBUpdateFirstName.Text) || string.IsNullOrWhiteSpace(TXTBUpdateLastName.Text)
+                || string.IsNullOrWhiteSpace(TXTBUpdateYearOfStudy.Text) || string.IsNullOrWhiteSpace(TXTBUpdateGPA.Text)
+                || string.IsNullOrWhiteSpace(MTXTBUpdateBirthDate.Text) || string.IsNullOrWhiteSpace(TXTBUpdateCity.Text)
+                || string.IsNullOrWhiteSpace(TXTBUpdateState.Text) || string.IsNullOrWhiteSpace(MTXTBUpdateCreditsEarned.Text)
+                || string.IsNullOrWhiteSpace(TXTBUpdatePhone.Text) || string.IsNullOrWhiteSpace(TXTBUpdateEmail.Text)
+                || string.IsNullOrWhiteSpace(TXTBUpdateCountry.Text) || string.IsNullOrWhiteSpace(TXTBUpdatePostalCode.Text)
+                || string.IsNullOrWhiteSpace(TXTBUpdateAchievements.Text)))
+            {
+                if (!IsSomeItemSelected())
+                {
+                    MessageBox.Show("Please Selct a Student To Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                SaveStudentInfoAfterUpdate();
+                ClearTXTBoxes_Update();
+                MessageBox.Show("Student Info Has Been Updated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (!IsSomeItemSelected())
+                {
+                    MessageBox.Show("Please Selct a Student To Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                    MessageBox.Show("Please Enter Valid Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TXTBUpdateCreditsEarned_MouseEnter(object sender, EventArgs e)
+        {
+            MTXTBUpdateCreditsEarned.Visible = true;
+        }
+
+        private void TXTBUpdateBirthDate_MouseEnter(object sender, EventArgs e)
+        {
+            MTXTBUpdateBirthDate.Visible = true;
+        }
+
+        private void TXTBUpdateBirthDate_Enter(object sender, EventArgs e)
+        {
+            MTXTBUpdateBirthDate.Visible = true;
+        }
+
+        private void TXTBUpdateCreditsEarned_Enter(object sender, EventArgs e)
+        {
+            MTXTBUpdateCreditsEarned.Visible = true;
+        }
+
+        private void CMSRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshStudentsListsViews();
+        }
+
+        struct StProfessors
+        {
+            public string FirstName;
+            public string LastName;
+            public char Gender;
+            public string ContactNumber;
+            public string Email;
+
+            public string ID;
+            public string Specialization;
+            public string Department;
+            public string Qualifications;
+            public string DateOfJoining;
+        }
+
+        StProfessors GetProfessorRecord(string[] ProfessorInfo)
+        {
+            StProfessors Professors;
+
+            Professors.ID = ProfessorInfo[0];
+            Professors.FirstName = ProfessorInfo[1];
+            Professors.LastName = ProfessorInfo[2];
+            Professors.Gender = Convert.ToChar(ProfessorInfo[3]);
+            Professors.Department = ProfessorInfo[4];
+            Professors.Specialization = ProfessorInfo[5];
+            Professors.ContactNumber = ProfessorInfo[6];
+            Professors.Email = ProfessorInfo[7];
+            Professors.Qualifications = ProfessorInfo[8];
+            Professors.DateOfJoining = ProfessorInfo[9];
+
+            return Professors;
+        }
+
+        List<StProfessors> GetProfessorRecords()
+        {
+            StreamReader Reader = new StreamReader(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+            string DataLine;
+            string[] ProfessorInfo;
+
+            StProfessors Professor;
+            List<StProfessors> ProfessorsRecords = new List<StProfessors>();
+
+            while ((DataLine = Reader.ReadLine()) != null)
+            {
+                ProfessorInfo = DataLine.Split('#');
+                Professor = GetProfessorRecord(ProfessorInfo);
+                ProfessorsRecords.Add(Professor);
+            }
+
+            Reader.Close();
+            return ProfessorsRecords;
+        }
+
+        List<StProfessors> LProfessorsRecords = new List<StProfessors>();
+
+        bool IsLVProfessorsListEmpty()
+        {
+            if (LVProfessorsList.Items.Count > 0)
+                return false;
+            else
+                return true;
+        }
+
+        bool IsLVProfessorsAcademicInfoEmpty()
+        {
+            if (LVProfessorsAcademicInfo.Items.Count > 0)
+                return false;
+            else
+                return true;
+        }
+
+        bool IsLVProfessorsContactInfoEmpty()
+        {
+            if (LVProfessorsContactInfo.Items.Count > 0)
+                return false;
+            else
+                return true;
+        }
+
+        void ShowProfessorsList()
+        {
+            ListViewItem Item;
+
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                Item = new ListViewItem(Professor.ID);
+
+                Item.SubItems.Add(Professor.FirstName);
+                Item.SubItems.Add(Professor.LastName);
+                Item.SubItems.Add(Convert.ToString(Professor.Gender));
+                Item.SubItems.Add(Professor.Email);
+
+                if (Professor.Gender == 'M')
+                    Item.ImageIndex = 0;
+                else if (Professor.Gender == 'F')
+                    Item.ImageIndex = 1;
+
+                LVProfessorsList.Items.Add(Item);
+            }
+        }
+
+        void ShowProfessorsAcademicInfo()
+        {
+            ListViewItem Item;
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                Item = new ListViewItem(Professor.ID);
+
+                Item.SubItems.Add(Professor.FirstName);
+                Item.SubItems.Add(Professor.LastName);
+                Item.SubItems.Add(Professor.Specialization);
+                Item.SubItems.Add(Professor.Department);
+                Item.SubItems.Add(Professor.Qualifications);
+                Item.SubItems.Add(Professor.DateOfJoining);
+
+                if (Professor.Gender == 'M')
+                    Item.ImageIndex = 0;
+                else if (Professor.Gender == 'F')
+                    Item.ImageIndex = 1;
+
+                LVProfessorsAcademicInfo.Items.Add(Item);
+            }
+        }
+
+        void ShowProfessorsContactInfo()
+        {
+            ListViewItem Item;
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                Item = new ListViewItem(Professor.ID);
+
+                Item.SubItems.Add(Professor.FirstName);
+                Item.SubItems.Add(Professor.LastName);
+                Item.SubItems.Add(Professor.ContactNumber);
+                Item.SubItems.Add(Professor.Email);
+
+                if (Professor.Gender == 'M')
+                    Item.ImageIndex = 0;
+                else if (Professor.Gender == 'F')
+                    Item.ImageIndex = 1;
+
+                LVProfessorsContactInfo.Items.Add(Item);
+            }
+        }
+
+        bool IsSomeItemSelectedProfsSection()
+        {
+            if (LVProfessorsList.SelectedItems.Count == 1) return true; else return false;
+        }
+
+        void GetProfMainInfo()
+        {
+            foreach(StProfessors Professor in LProfessorsRecords)
+            {
+                if (Professor.ID == LVProfessorsList.SelectedItems[0].SubItems[0].Text)
+                {
+                    LBProfFirstName.Text = Professor.FirstName;
+                    LBProfLastName.Text = Professor.LastName;
+                    LBProfGender.Text = Professor.Gender.ToString();
+                    LBProfID.Text = Professor.ID;
+                    LBProfDepartement.Text = Professor.Department;
+                    LBProfEmail.Text = Professor.Email;
+                    LBProfSpecialization.Text = Professor.Specialization;
+                    LBProfDateOfJoining.Text = Professor.DateOfJoining;
+                    LBProfContactNumber.Text = Professor.ContactNumber;
+                    LBProfQualifications.Text = Professor.Qualifications;
+
+                    if (Professor.Gender == 'M')
+                        PBProfessorImage.Image = Resources.man;
+                    else if (Professor.Gender == 'F')
+                        PBProfessorImage.Image = Resources.woman;
+
+                    break;
+                }
+            }
+        }
+
+        void GetProfessorInfo()
+        {
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                if (Professor.ID == LVProfessorsList.SelectedItems[0].SubItems[0].Text)
+                {
+                    TXTBTNProfUFirstName.Text = Professor.FirstName;
+                    TXTBTNProfULastName.Text = Professor.LastName;
+
+                    if (Professor.Gender == 'M')
+                        CBProfUGender.SelectedIndex = 0;
+                    else
+                        CBProfUGender.SelectedIndex = 1;
+
+                    TXTBTNProfUEmail.Text = Professor.Email;
+                    TXTBTNProfUSpecialization.Text = Professor.Specialization;
+                    TXTBTNProfUQualifications.Text = Professor.Qualifications;
+                    TXTBTNProfUDateOfJoining.Text = Professor.DateOfJoining;
+                    TXTBTNProfUContactNumber.Text = Professor.ContactNumber;
+
+                    CBProfUDepatement.Text = Professor.Department;
+
+                    break;
+                }
+            }
+        }
+
+        private void TCProfessors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TCProfessorsOP.SelectedTab.Text)
+            {
+                case "Professors List":
+
+                    if (!IsLVProfessorsListEmpty())
+                        return;
+
+                    ShowProfessorsList();
+
+                    break;
+                case "Academic Info":
+
+                    if (!IsLVProfessorsAcademicInfoEmpty())
+                        return;
+
+                    ShowProfessorsAcademicInfo();
+
+                    break;
+                case "Contact Info":
+
+                    if (!IsLVProfessorsContactInfoEmpty())
+                        return;
+
+                    ShowProfessorsContactInfo();
+
+                    break;
+                case "View":
+
+                    if (!IsSomeItemSelectedProfsSection())
+                        return;
+
+                    GetProfMainInfo();
+
+                    break;
+                case "Update":
+
+                    if (!IsSomeItemSelectedProfsSection())
+                        return;
+
+                    GetProfessorInfo();
+
+                    break;
+            }
+
+        }
+
+        private void TSMProfView_Click(object sender, EventArgs e)
+        {
+            if (LVProfessorsList.SelectedItems.Count > 0)
+                TCProfessorsOP.SelectTab(3);
+            else
+                MessageBox.Show("Please select a Professor to view", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void TSMProfUpdate_Click(object sender, EventArgs e)
+        {
+            if (LVProfessorsList.SelectedItems.Count > 0)
+                TCProfessorsOP.SelectTab(5);
+            else
+                MessageBox.Show("Please select a Professor to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        string ConvertProfessorRecordToDataLine(StProfessors Professor)
+        {
+            string DataLine = string.Empty;
+
+            DataLine += Professor.ID + '#';
+            DataLine += Professor.FirstName + '#';
+            DataLine += Professor.LastName + '#';
+            DataLine += Professor.Gender.ToString() + '#';
+            DataLine += Professor.Department + '#';
+            DataLine += Professor.Specialization + '#';
+            DataLine += Professor.ContactNumber + '#';
+            DataLine += Professor.Email + '#';
+            DataLine += Professor.Qualifications + '#';
+            DataLine += Professor.DateOfJoining;
+
+            return DataLine;
+        }
+
+        void SaveChangesToProfsFile()
+        {
+            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                if (Professor.ID != LVProfessorsList.SelectedItems[0].SubItems[0].Text)
+                {
+                    Writer.WriteLine(ConvertProfessorRecordToDataLine(Professor));
+                }
+            }
+
+            Writer.Close();
+        }
+
+        void RefreshProfessorsListsViews()
+        {
+            LProfessorsRecords = GetProfessorRecords();
+
+            // Refresh Professors List
+            LVProfessorsList.Items.Clear();
+            ShowProfessorsList();
+
+            // Refresh Professors Academic Info
+            LVProfessorsAcademicInfo.Items.Clear();
+            ShowProfessorsAcademicInfo();
+
+            // Refresh Professors Contact Info
+            LVProfessorsContactInfo.Items.Clear();
+            ShowProfessorsContactInfo();
+        }
+
+        private void TSMProfDelete_Click(object sender, EventArgs e)
+        {
+            if (LVProfessorsList.SelectedItems.Count == 1)
+            {
+                if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    SaveChangesToProfsFile();
+                    MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LVProfessorsList.SelectedItems[0].Remove();
+                    RefreshProfessorsListsViews();
+                }
+                else
+                    MessageBox.Show("Saving changes is canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (LVProfessorsList.SelectedItems.Count > 1)
+                MessageBox.Show("Multipule selection is not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Please select a Professor to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void TSMProfRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshProfessorsListsViews();
+        }
+
+        StProfessors UopdateProfessorRecord(StProfessors Professor)
+        {
+            Professor.FirstName = TXTBTNProfUFirstName.Text;
+            Professor.LastName = TXTBTNProfULastName.Text;
+
+            if (CBProfUGender.Text == "Male")
+                Professor.Gender = 'M';
+            else if (CBProfUGender.Text == "Female")
+                Professor.Gender = 'F';
+
+            Professor.Department = CBProfUDepatement.Text;
+            Professor.Specialization = TXTBTNProfUSpecialization.Text;
+            Professor.ContactNumber = TXTBTNProfUContactNumber.Text;
+            Professor.Email = TXTBTNProfUEmail.Text;
+            Professor.Qualifications = TXTBTNProfUQualifications.Text;
+            Professor.DateOfJoining = TXTBTNProfUDateOfJoining.Text;
+
+            return Professor;
+        }
+
+        void SaveProfessorInfoAfterUpdate()
+        {
+            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+
+            foreach (StProfessors Professor in LProfessorsRecords)
+            {
+                if (LVProfessorsList.SelectedItems[0].SubItems[0].Text == Professor.ID)
+                {
+                    Writer.WriteLine(ConvertProfessorRecordToDataLine(UopdateProfessorRecord(Professor)));
+                }
+                else
+                    Writer.WriteLine(ConvertProfessorRecordToDataLine(Professor));
+            }
+
+            Writer.Close();
+        }
+
+        void ClearTXTBoxes_Update_Profs()
+        {
+            TXTBTNProfUFirstName.Clear();
+            TXTBTNProfULastName.Clear();
+            TXTBTNProfUEmail.Clear();
+            TXTBTNProfUSpecialization.Clear();
+            TXTBTNProfUQualifications.Clear();
+            TXTBTNProfUDateOfJoining.Clear();
+            TXTBTNProfUContactNumber.Clear();
+        }
+
+        private void BTNUpdateProfInfo_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBTNProfUFirstName.Text) || string.IsNullOrWhiteSpace(TXTBTNProfULastName.Text)
+                || string.IsNullOrWhiteSpace(TXTBTNProfUEmail.Text) || string.IsNullOrWhiteSpace(TXTBTNProfUSpecialization.Text)
+                || string.IsNullOrWhiteSpace(TXTBTNProfUQualifications.Text) || string.IsNullOrWhiteSpace(TXTBTNProfUDateOfJoining.Text)
+                || string.IsNullOrWhiteSpace(TXTBTNProfUContactNumber.Text)))
+            {
+                if (!IsSomeItemSelectedProfsSection())
+                {
+                    MessageBox.Show("Please Select a Prof To Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                SaveProfessorInfoAfterUpdate();
+                ClearTXTBoxes_Update_Profs();
+                RefreshProfessorsListsViews();
+                MessageBox.Show("Professor Info Has Been Updated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (!IsSomeItemSelectedProfsSection())
+                {
+                    MessageBox.Show("Please Selct a Professor To Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                    MessageBox.Show("Please Enter Valid Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        string ConvertProfessorRecordToDataLine()
+        {
+            string DataLine = string.Empty;
+
+            DataLine += TXTBProfAID.Text + '#';
+            DataLine += TXTBProfAFirstName.Text + '#';
+            DataLine += TXTBProfALastName.Text + '#';
+
+            if (CBProfAGender.Text == "Male")
+                DataLine += "M#";
+            else if (CBProfAGender.Text == "Female")
+                DataLine += "F#";
+
+            DataLine += CBProfADepartement.Text + '#';
+            DataLine += TXTBProfASpecialization.Text + '#';
+            DataLine += TXTBProfAContactNumber.Text + '#';
+            DataLine += TXTBProfAEmail.Text + '#';
+            DataLine += TXTBProfAQualifications.Text + '#';
+            DataLine += TXTBProfADateOfJoining.Text;
+
+            return DataLine;
+        }
+
+        void AddProfDataToFile()
+        {
+            File.AppendAllText(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt",
+                 ConvertProfessorRecordToDataLine() + "\n");
+        }
+
+        void ClearAddProfTXTBoxes()
+        {
+            TXTBProfAFirstName.Clear();
+            TXTBProfALastName.Clear();
+            TXTBProfAID.Clear();
+            TXTBProfASpecialization.Clear();
+            TXTBProfAContactNumber.Clear();
+            TXTBProfAEmail.Clear();
+            TXTBProfAQualifications.Clear();
+            TXTBProfADateOfJoining.Clear();
+        }
+
+        private void BTNAddProf_Click(object sender, EventArgs e)
+        {
+            if(!(string.IsNullOrWhiteSpace(TXTBProfAFirstName.Text) || string.IsNullOrWhiteSpace(TXTBProfALastName.Text)
+            || string.IsNullOrWhiteSpace(TXTBProfAID.Text) || string.IsNullOrWhiteSpace(TXTBProfASpecialization.Text)
+            || string.IsNullOrWhiteSpace(TXTBProfAContactNumber.Text) || string.IsNullOrWhiteSpace(TXTBProfAEmail.Text)
+            || string.IsNullOrWhiteSpace(TXTBProfAQualifications.Text) || string.IsNullOrWhiteSpace(TXTBProfADateOfJoining.Text)))
+            {
+                AddProfDataToFile();
+                ClearAddProfTXTBoxes();
+                MessageBox.Show("Professor added successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Please Enter valid Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

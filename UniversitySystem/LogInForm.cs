@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UniversitySystem.Properties;
+using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace UniversitySystem
 {
@@ -18,6 +19,9 @@ namespace UniversitySystem
         {
             InitializeComponent();
         }
+
+        byte Trials = 3;
+        byte Time = 30;
 
         struct stUser
         {
@@ -72,6 +76,12 @@ namespace UniversitySystem
 
             return LUsers;
         }
+        
+        void CountTrials()
+        {
+            Trials--;
+            LBTrials.Text = "You have " + Trials + " Trials left";     
+        }
 
         bool IsUserRegistered()
         {
@@ -84,13 +94,16 @@ namespace UniversitySystem
                     if (User.RememberMe)
                     {
                         StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\RememberedUsers");
-                        Writer.WriteLine(User.UserName + "#" + User.Password);
+                        Writer.Write(User.UserName + "#" + User.Password);
                         Writer.Close();
                     }
                     return true;
                 }
             }
-            MessageBox.Show("Username or Password is wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            TxTBUserName.BorderColor = Color.Red;
+            TxTBPassword.BorderColor = Color.Red;
+            CountTrials();
+            MessageBox.Show("Username or Password is wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);            
             return false;
         }
 
@@ -147,7 +160,7 @@ namespace UniversitySystem
         {
             if (Convert.ToString(BTNShowHide.Tag) == "show")
             {
-                TxTBPassword.PasswordChar = TxTBUserName.PasswordChar;
+                TxTBPassword.PasswordChar = '\0';
                 BTNShowHide.Image = Resources.hide;
                 BTNShowHide.Tag = "hide";
             }
@@ -157,6 +170,69 @@ namespace UniversitySystem
                 BTNShowHide.Image = Resources.show;
                 BTNShowHide.Tag = "show";
             }
+        }
+
+        private void TxTBUserName_TextChanged(object sender, EventArgs e)
+        {
+            TxTBUserName.BorderColor = Color.LightSkyBlue;
+            TxTBPassword.BorderColor = Color.LightSkyBlue;
+        }
+
+        private void TxTBPassword_TextChanged(object sender, EventArgs e)
+        {
+            TxTBUserName.BorderColor = Color.LightSkyBlue;
+            TxTBPassword.BorderColor = Color.LightSkyBlue;
+        }
+
+        void EnableDisableButtons(bool Order)
+        {
+            BTNLogin.Enabled = Order;
+            TxTBUserName.Enabled = Order;
+            TxTBPassword.Enabled = Order;
+            BTNShowHide.Enabled = Order;
+            BTNShowHide.BackColor = Color.Gainsboro;
+        }
+
+        void ResetTrialsAndTime()
+        {
+            Trials = 3;
+            Time = 30;
+            TrialsTimer.Start();
+            LBTrials.Text = "";
+        }
+
+        private void TrialsTimer_Tick(object sender, EventArgs e)
+        {
+            if (Trials == 0)
+            {
+                EnableDisableButtons(false);
+
+                LBTrials.Location = new Point(138, 386);
+
+                LBTrials.Text = Time.ToString();
+                Time--;
+
+                if (Time == 0)
+                {
+                    ResetTrialsAndTime();
+                    EnableDisableButtons(true);
+                    LBTrials.Location = new Point(90, 386);
+                    BTNShowHide.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void BTNCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        DateTime datetime;
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            datetime = DateTime.Now;
+            LBDate.Text = datetime.ToString();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.CBRememberMe = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BTNLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BTNShowHide = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.TrialsTimer = new System.Windows.Forms.Timer(this.components);
+            this.LBTrials = new System.Windows.Forms.Label();
+            this.BTNCloseForm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.LBDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // CBRememberMe
@@ -99,6 +106,7 @@
             this.TxTBUserName.Size = new System.Drawing.Size(205, 36);
             this.TxTBUserName.TabIndex = 8;
             this.TxTBUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxTBUserName.TextChanged += new System.EventHandler(this.TxTBUserName_TextChanged);
             this.TxTBUserName.MouseEnter += new System.EventHandler(this.TxTBUserName_MouseEnter);
             // 
             // TxTBPassword
@@ -117,13 +125,14 @@
             this.TxTBPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxTBPassword.Location = new System.Drawing.Point(44, 236);
             this.TxTBPassword.Name = "TxTBPassword";
-            this.TxTBPassword.PasswordChar = '•';
+            this.TxTBPassword.PasswordChar = '●';
             this.TxTBPassword.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.TxTBPassword.PlaceholderText = "Password";
             this.TxTBPassword.SelectedText = "";
             this.TxTBPassword.Size = new System.Drawing.Size(205, 36);
             this.TxTBPassword.TabIndex = 9;
             this.TxTBPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxTBPassword.TextChanged += new System.EventHandler(this.TxTBPassword_TextChanged);
             this.TxTBPassword.MouseEnter += new System.EventHandler(this.TxTBPassword_MouseEnter);
             // 
             // label3
@@ -153,8 +162,11 @@
             this.BTNLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.BTNLogin.ForeColor = System.Drawing.Color.Black;
             this.BTNLogin.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.BTNLogin.HoverState.FillColor = System.Drawing.Color.SkyBlue;
+            this.BTNLogin.HoverState.FillColor2 = System.Drawing.Color.SkyBlue;
             this.BTNLogin.Location = new System.Drawing.Point(44, 291);
             this.BTNLogin.Name = "BTNLogin";
+            this.BTNLogin.PressedColor = System.Drawing.Color.DeepSkyBlue;
             this.BTNLogin.Size = new System.Drawing.Size(205, 36);
             this.BTNLogin.TabIndex = 11;
             this.BTNLogin.Text = "Log in";
@@ -178,6 +190,64 @@
             this.BTNShowHide.Tag = "show";
             this.BTNShowHide.Click += new System.EventHandler(this.BTNShowHide_Click);
             // 
+            // TrialsTimer
+            // 
+            this.TrialsTimer.Enabled = true;
+            this.TrialsTimer.Interval = 1000;
+            this.TrialsTimer.Tick += new System.EventHandler(this.TrialsTimer_Tick);
+            // 
+            // LBTrials
+            // 
+            this.LBTrials.AutoSize = true;
+            this.LBTrials.Location = new System.Drawing.Point(90, 386);
+            this.LBTrials.Name = "LBTrials";
+            this.LBTrials.Size = new System.Drawing.Size(0, 13);
+            this.LBTrials.TabIndex = 14;
+            this.LBTrials.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BTNCloseForm
+            // 
+            this.BTNCloseForm.BackColor = System.Drawing.Color.Transparent;
+            this.BTNCloseForm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNCloseForm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNCloseForm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNCloseForm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNCloseForm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BTNCloseForm.ForeColor = System.Drawing.Color.White;
+            this.BTNCloseForm.Image = global::UniversitySystem.Properties.Resources.close;
+            this.BTNCloseForm.Location = new System.Drawing.Point(762, 12);
+            this.BTNCloseForm.Name = "BTNCloseForm";
+            this.BTNCloseForm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.BTNCloseForm.Size = new System.Drawing.Size(22, 22);
+            this.BTNCloseForm.TabIndex = 15;
+            this.BTNCloseForm.Tile = false;
+            this.BTNCloseForm.UseTransparentBackground = true;
+            this.BTNCloseForm.Click += new System.EventHandler(this.BTNCloseForm_Click);
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.BorderRadius = 25;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // LBDate
+            // 
+            this.LBDate.BackColor = System.Drawing.Color.Transparent;
+            this.LBDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBDate.Location = new System.Drawing.Point(657, 420);
+            this.LBDate.Name = "LBDate";
+            this.LBDate.Size = new System.Drawing.Size(3, 2);
+            this.LBDate.TabIndex = 16;
+            this.LBDate.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +255,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LBDate);
+            this.Controls.Add(this.BTNCloseForm);
+            this.Controls.Add(this.LBTrials);
             this.Controls.Add(this.BTNShowHide);
             this.Controls.Add(this.BTNLogin);
             this.Controls.Add(this.TxTBPassword);
@@ -194,7 +267,9 @@
             this.Controls.Add(this.CBRememberMe);
             this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogInForm";
+            this.ShowInTaskbar = false;
             this.Text = "Log in";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,6 +285,12 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2GradientButton BTNLogin;
         private Guna.UI2.WinForms.Guna2ImageButton BTNShowHide;
+        private System.Windows.Forms.Timer TrialsTimer;
+        private System.Windows.Forms.Label LBTrials;
+        private Guna.UI2.WinForms.Guna2CircleButton BTNCloseForm;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDate;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

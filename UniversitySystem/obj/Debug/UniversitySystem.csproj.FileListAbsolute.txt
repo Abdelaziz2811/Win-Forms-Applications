@@ -14,3 +14,6 @@ C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\Universi.69898E8C.Up2
 C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\ar\UniversitySystem.resources.dll
 C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\UniversitySystem.MainScreen.ar.resources
 C:\Users\Abdelaziz\source\repos\UniversitySystem\obj\Debug\ar\UniversitySystem.resources.dll
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\MetroFramework.dll
+C:\Users\Abdelaziz\source\repos\UniversitySystem\bin\Debug\MetroFramework.Fonts.dll
