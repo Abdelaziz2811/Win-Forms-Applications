@@ -240,6 +240,7 @@
             this.LBDate.Name = "LBDate";
             this.LBDate.Size = new System.Drawing.Size(3, 2);
             this.LBDate.TabIndex = 16;
+            this.LBDate.Text = null;
             this.LBDate.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1

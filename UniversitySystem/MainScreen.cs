@@ -90,8 +90,11 @@ namespace UniversitySystem
 
         private void MainScreen_Load(object sender, EventArgs e)
         {
+            TCStudentsOP.SelectedIndex = 5;
+
             LStudentsRecords = GetStudentsRecords();
             LProfessorsRecords = GetProfessorRecords();
+            LCoursesRecord = GetCoursesRecords();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1111,10 +1114,99 @@ namespace UniversitySystem
             {
                 AddProfDataToFile();
                 ClearAddProfTXTBoxes();
+                RefreshProfessorsListsViews();
                 MessageBox.Show("Professor added successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Please Enter valid Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        struct StCourses
+        {
+            public string ID;
+            public string Name;
+            public string ProfessorID;
+            public string Department;
+            public string Hours;
+            public string Credits;
+            public string Description;
+        }
+
+        StCourses GetCourseRecord(string[] CourseData)
+        {
+            StCourses Course;
+
+            Course.ID = CourseData[0];
+            Course.Name = CourseData[1];
+            Course.ProfessorID = CourseData[2];
+            Course.Department = CourseData[3];
+            Course.Hours = CourseData[4];
+            Course.Credits = CourseData[5];
+            Course.Description = CourseData[6];
+
+            return Course;
+        }
+
+        List<StCourses> GetCoursesRecords()
+        {
+            StreamReader Reader = new StreamReader(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Courses.txt");
+            string DataLine;
+            string[] CourseData;
+
+            List<StCourses> CoursesRecord = new List<StCourses>();
+
+            while ((DataLine = Reader.ReadLine()) != null)
+            {
+                CourseData = DataLine.Split('#');
+                CoursesRecord.Add(GetCourseRecord(CourseData));
+            }
+
+            Reader.Close();
+            return CoursesRecord;
+        }
+
+        List<StCourses> LCoursesRecord = new List<StCourses>();
+
+        void ShowCoursesList()
+        {
+            ListViewItem Item;
+
+            foreach(StCourses Course in LCoursesRecord)
+            {
+                Item = new ListViewItem(Course.ID);
+                Item.SubItems.Add(Course.Name);
+                Item.SubItems.Add(Course.ProfessorID);
+                Item.SubItems.Add(Course.Department);
+                Item.SubItems.Add(Course.Hours);
+                Item.SubItems.Add(Course.Credits);
+
+                LVCourses.Items.Add(Item);
+            }
+
+        }
+
+        private void TCCoursesOp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TCCoursesOp.SelectedTab.Text)
+            {
+                case "Courses List":
+
+                    if (LVCourses.Items.Count > 0)
+                        return;
+
+                    ShowCoursesList();
+
+                    break;
+                case "Search":
+
+                    if (LVCourses.Items.Count > 0)
+                        return;
+
+                    
+
+                    break;
+
+            }
         }
     }
 }
