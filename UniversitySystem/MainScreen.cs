@@ -67,9 +67,11 @@ namespace UniversitySystem
             return Student;
         }
 
+        string CurrentDirectory = Directory.GetCurrentDirectory().Remove(48);
+
         List<StStudents> GetStudentsRecords()
         {
-            StreamReader Reader = new StreamReader(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Students.txt");
             string DataLine;
             string[] StudentInfo;
             
@@ -91,10 +93,12 @@ namespace UniversitySystem
         private void MainScreen_Load(object sender, EventArgs e)
         {
             TCStudentsOP.SelectedIndex = 5;
+            TCProfessorsOP.SelectedIndex = 4;
+            TCCoursesOp.SelectedIndex = 3;
 
             LStudentsRecords = GetStudentsRecords();
             LProfessorsRecords = GetProfessorRecords();
-            LCoursesRecord = GetCoursesRecords();
+            LCourses = GetCoursesRecords();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,7 +143,7 @@ namespace UniversitySystem
 
         void SaveChangesToFile()
         {
-            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Students.txt");
 
             foreach (StStudents Student in LStudentsRecords)
             {
@@ -486,7 +490,7 @@ namespace UniversitySystem
 
         void SaveStudentInfoToFile()
         {
-            File.AppendAllText(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt",
+            File.AppendAllText(CurrentDirectory + "\\Students.txt",
                  ConvertStudentDataToDataLine() + "\n");  
         }
 
@@ -551,7 +555,7 @@ namespace UniversitySystem
 
         void SaveStudentInfoAfterUpdate()
         {
-            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Students.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Students.txt");
 
             foreach (StStudents Student in LStudentsRecords)
             {
@@ -675,7 +679,7 @@ namespace UniversitySystem
 
         List<StProfessors> GetProfessorRecords()
         {
-            StreamReader Reader = new StreamReader(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Professors.txt");
             string DataLine;
             string[] ProfessorInfo;
 
@@ -929,7 +933,7 @@ namespace UniversitySystem
 
         void SaveChangesToProfsFile()
         {
-            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Professors.txt");
 
             foreach (StProfessors Professor in LProfessorsRecords)
             {
@@ -1008,7 +1012,7 @@ namespace UniversitySystem
 
         void SaveProfessorInfoAfterUpdate()
         {
-            StreamWriter Writer = new StreamWriter(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Professors.txt");
 
             foreach (StProfessors Professor in LProfessorsRecords)
             {
@@ -1089,7 +1093,7 @@ namespace UniversitySystem
 
         void AddProfDataToFile()
         {
-            File.AppendAllText(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Professors.txt",
+            File.AppendAllText(CurrentDirectory + "\\Professors.txt",
                  ConvertProfessorRecordToDataLine() + "\n");
         }
 
@@ -1149,7 +1153,7 @@ namespace UniversitySystem
 
         List<StCourses> GetCoursesRecords()
         {
-            StreamReader Reader = new StreamReader(@"C:\Users\Abdelaziz\source\repos\UniversitySystem\Courses.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Courses.txt");
             string DataLine;
             string[] CourseData;
 
@@ -1165,13 +1169,13 @@ namespace UniversitySystem
             return CoursesRecord;
         }
 
-        List<StCourses> LCoursesRecord = new List<StCourses>();
+        List<StCourses> LCourses = new List<StCourses>();
 
         void ShowCoursesList()
         {
             ListViewItem Item;
 
-            foreach(StCourses Course in LCoursesRecord)
+            foreach(StCourses Course in LCourses)
             {
                 Item = new ListViewItem(Course.ID);
                 Item.SubItems.Add(Course.Name);
@@ -1189,10 +1193,10 @@ namespace UniversitySystem
         {
             switch (TCCoursesOp.SelectedTab.Text)
             {
-                case "Courses List":
+                case "Courses  List":
 
-                    if (LVCourses.Items.Count > 0)
-                        return;
+                    //if (LVCourses.Items.Count > 0)
+                      //  return;
 
                     ShowCoursesList();
 
@@ -1207,6 +1211,56 @@ namespace UniversitySystem
                     break;
 
             }
+        }
+
+        void GetCourseInfo(StCourses Course)
+        {
+            LBCourseName.Text = Course.Name;
+            LBProfessorID.Text = Course.ProfessorID;
+            LBCourseDepartement.Text = Course.Department;
+            LBCourseHours.Text = Course.Hours;
+            LBCourseCredits.Text = Course.Credits;
+
+            string[] Description = Course.Description.Split(' ');
+
+            string DescriptionLine1 = string.Empty;
+            string DescriptionLine2 = string.Empty;
+
+            short i;
+            
+            for (i = 0; i <= Description.Length / 2; i++)
+                DescriptionLine1 += Description[i] + ' ';
+
+            for (short j = i; j < Description.Length; j++)
+                DescriptionLine2 += Description[j] + ' ';
+
+            LBCourseDescriptionLine1.Text = DescriptionLine1;
+            LBCourseDescriptionLine2.Text = DescriptionLine2;
+        }
+
+        bool FindCourse(string CourseID)
+        {
+            foreach(StCourses Course in LCourses)
+            {
+                if (Course.ID == CourseID)
+                {
+                    GetCourseInfo(Course);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void BTNCourseSearch_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBSCourseID.Text)))
+            {
+                if (!FindCourse(TXTBSCourseID.Text))
+                    MessageBox.Show("Course Not Found!\nEnter a valid Course ID", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+                MessageBox.Show("Please enter CourseID for search", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
