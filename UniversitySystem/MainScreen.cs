@@ -94,7 +94,7 @@ namespace UniversitySystem
         {
             TCStudentsOP.SelectedIndex = 5;
             TCProfessorsOP.SelectedIndex = 4;
-            TCCoursesOp.SelectedIndex = 3;
+            TCCoursesOp.SelectedIndex = 2;
 
             LStudentsRecords = GetStudentsRecords();
             LProfessorsRecords = GetProfessorRecords();
@@ -1116,6 +1116,8 @@ namespace UniversitySystem
             || string.IsNullOrWhiteSpace(TXTBProfAContactNumber.Text) || string.IsNullOrWhiteSpace(TXTBProfAEmail.Text)
             || string.IsNullOrWhiteSpace(TXTBProfAQualifications.Text) || string.IsNullOrWhiteSpace(TXTBProfADateOfJoining.Text)))
             {
+               
+
                 AddProfDataToFile();
                 ClearAddProfTXTBoxes();
                 RefreshProfessorsListsViews();
@@ -1261,6 +1263,42 @@ namespace UniversitySystem
             }
             else
                 MessageBox.Show("Please enter CourseID for search", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        bool IsCourseExists(string CourseID)
+        {
+            foreach (StCourses Course in LCourses)
+            {
+                if (Course.ID == CourseID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void BTNAddCourse_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(BTNACourseID.Text) || string.IsNullOrWhiteSpace(BTNADepartement.Text)
+                || string.IsNullOrWhiteSpace(BTNACourseName.Text) || string.IsNullOrWhiteSpace(BTNAProfessorID.Text)
+                || string.IsNullOrWhiteSpace(BTNACourseHours.Text) || string.IsNullOrWhiteSpace(BTNACourseCredits.Text)
+                || string.IsNullOrWhiteSpace(BTNADescription.Text)))
+            {
+                if (!IsCourseExists(BTNACourseID.Text))
+                {
+
+                }
+                else
+                    MessageBox.Show($"Course with ID {BTNACourseID.Text} is already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+                MessageBox.Show("Please enter a valid info","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void BTNADescription_TextChanged(object sender, EventArgs e)
+        {
+            BTNADescription.PlaceholderText = "";
         }
     }
 }

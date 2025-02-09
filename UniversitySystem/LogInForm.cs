@@ -126,22 +126,11 @@ namespace UniversitySystem
 
         private void BTNLogin_Click(object sender, EventArgs e)
         {
-            if (CBRememberMe.Checked)
-            {
-                if (!IsUserRegistered())
-                    return;
+            if (!IsUserRegistered())
+                 return;
 
-                Form Frm = new MainScreen();
-                Frm.ShowDialog();
-            }
-            else
-            {
-                if (!IsUserRegistered())
-                    return;
-
-                Form Frm = new MainScreen();
-                Frm.ShowDialog();
-            }
+            Form Frm = new MainScreen();
+            Frm.ShowDialog();
         }
 
         private void TxTBUserName_MouseEnter(object sender, EventArgs e)
@@ -234,5 +223,7 @@ namespace UniversitySystem
             datetime = DateTime.Now;
             LBDate.Text = datetime.ToString();
         }
+
+
     }
 }
