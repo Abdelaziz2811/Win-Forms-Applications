@@ -28,3 +28,5 @@ BC201#Biochemistry#PROF018#Chemistry#48#4#Chemical processes in biological syste
 AH101#Ancient History#PROF032#History#40#3#Classical civilizations and archaeological studies by Prof. Chris Davis
 MH201#Modern History#PROF070#History#42#3#20th-century global historical developments by Prof. Sarah Smith
 WH302#World History#PROF052#History#45#4#Comprehensive global historical perspectives by Prof. Anna Doe
+DS303#Data Structure#Prof023#Computer Science#35#5#an amazing course
+AP304#Problem Sloving#PROF098#Computer Science#45#6#A Problem Solving Course Focusing on algrorithms and logical thinking 

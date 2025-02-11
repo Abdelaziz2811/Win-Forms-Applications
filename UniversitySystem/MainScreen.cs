@@ -519,6 +519,7 @@ namespace UniversitySystem
             {
                 SaveStudentInfoToFile();
                 ClearTXTBoxes();
+                RefreshStudentsListsViews();
                 MessageBox.Show("Student added successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -605,6 +606,7 @@ namespace UniversitySystem
 
                 SaveStudentInfoAfterUpdate();
                 ClearTXTBoxes_Update();
+                RefreshStudentsListsViews();
                 MessageBox.Show("Student Info Has Been Updated Successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -1116,8 +1118,6 @@ namespace UniversitySystem
             || string.IsNullOrWhiteSpace(TXTBProfAContactNumber.Text) || string.IsNullOrWhiteSpace(TXTBProfAEmail.Text)
             || string.IsNullOrWhiteSpace(TXTBProfAQualifications.Text) || string.IsNullOrWhiteSpace(TXTBProfADateOfJoining.Text)))
             {
-               
-
                 AddProfDataToFile();
                 ClearAddProfTXTBoxes();
                 RefreshProfessorsListsViews();
@@ -1191,31 +1191,18 @@ namespace UniversitySystem
 
         }
 
-        private void TCCoursesOp_SelectedIndexChanged(object sender, EventArgs e)
+        private void TCCoursesOp_Click(object sender, EventArgs e)
         {
-            switch (TCCoursesOp.SelectedTab.Text)
+            if (LVCourses.Items.Count > 0)
+                return;
+
+            if (TCCoursesOp.SelectedTab.Text == "Courses  List")
             {
-                case "Courses  List":
-
-                    //if (LVCourses.Items.Count > 0)
-                      //  return;
-
-                    ShowCoursesList();
-
-                    break;
-                case "Search":
-
-                    if (LVCourses.Items.Count > 0)
-                        return;
-
-                    
-
-                    break;
-
+                ShowCoursesList();
             }
         }
 
-        void GetCourseInfo(StCourses Course)
+        void GetCourseInfoToView(StCourses Course)
         {
             LBCourseName.Text = Course.Name;
             LBProfessorID.Text = Course.ProfessorID;
@@ -1246,7 +1233,7 @@ namespace UniversitySystem
             {
                 if (Course.ID == CourseID)
                 {
-                    GetCourseInfo(Course);
+                    GetCourseInfoToView(Course);
                     return true;
                 }
             }
@@ -1278,19 +1265,62 @@ namespace UniversitySystem
             return false;
         }
 
+        string ConvertCourseRcordToDataLine()
+        {
+            string DataLine = string.Empty;
+
+            DataLine += TXTBACourseID.Text + '#';
+            DataLine += TXTBACourseName.Text + '#';
+            DataLine += TXTBACourseProfID.Text + '#';
+            DataLine += CBACourseDepartement.Text + '#';
+            DataLine += TXTBACourseHours.Text + '#';
+            DataLine += TXTBACourseCredits.Text + '#';
+            DataLine += TXTBADescription.Text;
+
+            return DataLine;
+        }
+
+        void ClearCourseAddTXTBoxes()
+        {
+            TXTBACourseID.Clear();
+            TXTBACourseName.Clear();
+            TXTBACourseProfID.Clear();
+            CBACourseDepartement.SelectedIndex = -1;
+            TXTBACourseHours.Clear();
+            TXTBACourseCredits.Clear();
+            TXTBADescription.Clear();
+        }
+
+        void RefreshCoursesListView()
+        {
+            LCourses = GetCoursesRecords();
+
+            LVCourses.Items.Clear();
+            ShowCoursesList();
+        }
+
+        void SaveCoursesInfoToFile()
+        {
+            File.AppendAllText(CurrentDirectory + "\\Courses.txt",
+                ConvertCourseRcordToDataLine() + "\n");
+        }
+
         private void BTNAddCourse_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrWhiteSpace(BTNACourseID.Text) || string.IsNullOrWhiteSpace(BTNADepartement.Text)
-                || string.IsNullOrWhiteSpace(BTNACourseName.Text) || string.IsNullOrWhiteSpace(BTNAProfessorID.Text)
-                || string.IsNullOrWhiteSpace(BTNACourseHours.Text) || string.IsNullOrWhiteSpace(BTNACourseCredits.Text)
-                || string.IsNullOrWhiteSpace(BTNADescription.Text)))
+            if (!(string.IsNullOrWhiteSpace(TXTBACourseID.Text) || string.IsNullOrWhiteSpace(CBACourseDepartement.Text)
+                || string.IsNullOrWhiteSpace(TXTBACourseName.Text) || string.IsNullOrWhiteSpace(TXTBACourseProfID.Text)
+                || string.IsNullOrWhiteSpace(TXTBACourseHours.Text) || string.IsNullOrWhiteSpace(TXTBACourseCredits.Text)
+                || string.IsNullOrWhiteSpace(TXTBADescription.Text)))
             {
-                if (!IsCourseExists(BTNACourseID.Text))
+                if (!IsCourseExists(TXTBACourseID.Text))
                 {
-
+                    SaveCoursesInfoToFile();
+                    ClearCourseAddTXTBoxes();
+                    RefreshCoursesListView();
+                    MessageBox.Show("Course added successfuly", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show($"Course with ID {BTNACourseID.Text} is already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Course with ID {TXTBACourseID.Text} is already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
                 MessageBox.Show("Please enter a valid info","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1298,7 +1328,77 @@ namespace UniversitySystem
 
         private void BTNADescription_TextChanged(object sender, EventArgs e)
         {
-            BTNADescription.PlaceholderText = "";
+            TXTBADescription.PlaceholderText = "";
         }
-    }
-}
+
+        bool IsSomeCourseSelected()
+        {
+            if (LVCourses.SelectedItems.Count >= 1)
+                return true;
+            else
+                return false;
+        }
+
+        private void TSMIViewCourse_Click(object sender, EventArgs e)
+        {
+            if (IsSomeCourseSelected())
+            {
+                foreach(StCourses Course in LCourses)
+                {
+                    if (Course.ID == LVCourses.SelectedItems[0].SubItems[0].Text)
+                    {
+                        GetCourseInfoToView(Course);
+                        break;
+                    }
+                }
+
+                TCCoursesOp.SelectTab(1);
+            }
+            else
+                MessageBox.Show("Please Choose a course to view", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void GetCourseInfoToUpdate(StCourses Course)
+        {
+            TXTBUCourseName.Text = Course.Name;
+            CBUCourseDepartement.Text = Course.Department;
+            TXTBUCourseProfID.Text = Course.ProfessorID;
+            TXTBUCourseHours.Text = Course.Hours;
+            TXTBUCourseCredits.Text = Course.Credits;
+            TXTBUDescription.Text = Course.Description;
+        }
+
+        private void TSMIUpdateCourse_Click(object sender, EventArgs e)
+        {
+            if (IsSomeCourseSelected())
+            {
+                foreach (StCourses Course in LCourses)
+                {
+                    if (Course.ID == LVCourses.SelectedItems[0].SubItems[0].Text)
+                    {
+                        GetCourseInfoToUpdate(Course);
+                        break;
+                    }
+                }
+
+                TCCoursesOp.SelectTab(3);
+            }
+            else
+                MessageBox.Show("Please Choose a course to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void BTNUpdateCourse_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBUCourseName.Text) || string.IsNullOrWhiteSpace(CBUCourseDepartement.Text)
+                || string.IsNullOrWhiteSpace(TXTBUCourseProfID.Text) || string.IsNullOrWhiteSpace(TXTBUCourseHours.Text)
+                || string.IsNullOrWhiteSpace(TXTBUCourseCredits.Text) || string.IsNullOrWhiteSpace(TXTBUDescription.Text)))
+            {
+
+            }
+            else 
+                MessageBox.Show("Please enter a valid info","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }       
+    }           
+}               
+          
