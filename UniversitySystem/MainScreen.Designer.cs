@@ -285,6 +285,58 @@
             this.TXTBUDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.TDepartements = new System.Windows.Forms.TabPage();
+            this.TCDepartementOP = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LVDepartements = new System.Windows.Forms.ListView();
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.guna2CustomGradientPanel10 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2GroupBox12 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.LBDepEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel35 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Separator8 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.LBDepCoursesLine2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LBDepCoursesLine1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LBDepMembers = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LBDepContactNumber = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LBHeadOfDep = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LBDepName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel34 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel37 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel38 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel39 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.guna2CustomGradientPanel11 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2GroupBox13 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.guna2CustomGradientPanel12 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2GroupBox17 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox16 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox17 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox18 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox19 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.TLogout = new System.Windows.Forms.TabPage();
             this.guna2GroupBox15 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -355,6 +407,18 @@
             this.tabPage6.SuspendLayout();
             this.guna2CustomGradientPanel9.SuspendLayout();
             this.guna2GroupBox16.SuspendLayout();
+            this.TDepartements.SuspendLayout();
+            this.TCDepartementOP.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.guna2CustomGradientPanel10.SuspendLayout();
+            this.guna2GroupBox12.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.guna2CustomGradientPanel11.SuspendLayout();
+            this.guna2GroupBox13.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.guna2CustomGradientPanel12.SuspendLayout();
+            this.guna2GroupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // CMSStudentHandle
@@ -2814,12 +2878,14 @@
             this.TSMIDeleteCourse.Image = global::UniversitySystem.Properties.Resources.trash;
             this.TSMIDeleteCourse.Name = "TSMIDeleteCourse";
             resources.ApplyResources(this.TSMIDeleteCourse, "TSMIDeleteCourse");
+            this.TSMIDeleteCourse.Click += new System.EventHandler(this.TSMIDeleteCourse_Click);
             // 
             // TSMIRefreshCourse
             // 
             this.TSMIRefreshCourse.Image = global::UniversitySystem.Properties.Resources.reloading;
             this.TSMIRefreshCourse.Name = "TSMIRefreshCourse";
             resources.ApplyResources(this.TSMIRefreshCourse, "TSMIRefreshCourse");
+            this.TSMIRefreshCourse.Click += new System.EventHandler(this.TSMIRefreshCourse_Click);
             // 
             // tabPage2
             // 
@@ -3428,8 +3494,690 @@
             // TDepartements
             // 
             this.TDepartements.BackColor = System.Drawing.Color.SteelBlue;
+            this.TDepartements.Controls.Add(this.TCDepartementOP);
             resources.ApplyResources(this.TDepartements, "TDepartements");
             this.TDepartements.Name = "TDepartements";
+            // 
+            // TCDepartementOP
+            // 
+            this.TCDepartementOP.CausesValidation = false;
+            this.TCDepartementOP.Controls.Add(this.tabPage3);
+            this.TCDepartementOP.Controls.Add(this.tabPage4);
+            this.TCDepartementOP.Controls.Add(this.tabPage7);
+            this.TCDepartementOP.Controls.Add(this.tabPage8);
+            resources.ApplyResources(this.TCDepartementOP, "TCDepartementOP");
+            this.TCDepartementOP.Name = "TCDepartementOP";
+            this.TCDepartementOP.SelectedIndex = 0;
+            this.TCDepartementOP.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.TCDepartementOP.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.TCDepartementOP.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.TCDepartementOP.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.TCDepartementOP.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.TCDepartementOP.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.TCDepartementOP.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.TCDepartementOP.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.TCDepartementOP.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.TCDepartementOP.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.TCDepartementOP.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.TCDepartementOP.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.TCDepartementOP.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.TCDepartementOP.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.TCDepartementOP.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.TCDepartementOP.TabButtonSize = new System.Drawing.Size(100, 45);
+            this.TCDepartementOP.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.TCDepartementOP.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            this.TCDepartementOP.Click += new System.EventHandler(this.TCDepartementOP_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.SteelBlue;
+            this.tabPage3.Controls.Add(this.LVDepartements);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            // 
+            // LVDepartements
+            // 
+            this.LVDepartements.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.LVDepartements.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LVDepartements.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader19,
+            this.columnHeader20,
+            this.columnHeader26,
+            this.columnHeader27,
+            this.columnHeader30,
+            this.columnHeader31});
+            this.LVDepartements.ContextMenuStrip = this.CMSCourseHandle;
+            this.LVDepartements.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.LVDepartements.GridLines = true;
+            this.LVDepartements.HideSelection = false;
+            resources.ApplyResources(this.LVDepartements, "LVDepartements");
+            this.LVDepartements.Name = "LVDepartements";
+            this.LVDepartements.UseCompatibleStateImageBehavior = false;
+            this.LVDepartements.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader19
+            // 
+            resources.ApplyResources(this.columnHeader19, "columnHeader19");
+            // 
+            // columnHeader20
+            // 
+            resources.ApplyResources(this.columnHeader20, "columnHeader20");
+            // 
+            // columnHeader26
+            // 
+            resources.ApplyResources(this.columnHeader26, "columnHeader26");
+            // 
+            // columnHeader27
+            // 
+            resources.ApplyResources(this.columnHeader27, "columnHeader27");
+            // 
+            // columnHeader30
+            // 
+            resources.ApplyResources(this.columnHeader30, "columnHeader30");
+            // 
+            // columnHeader31
+            // 
+            resources.ApplyResources(this.columnHeader31, "columnHeader31");
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.SteelBlue;
+            this.tabPage4.Controls.Add(this.guna2CustomGradientPanel10);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Name = "tabPage4";
+            // 
+            // guna2CustomGradientPanel10
+            // 
+            this.guna2CustomGradientPanel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel10.BorderRadius = 30;
+            this.guna2CustomGradientPanel10.Controls.Add(this.guna2Button4);
+            this.guna2CustomGradientPanel10.Controls.Add(this.guna2TextBox1);
+            this.guna2CustomGradientPanel10.Controls.Add(this.guna2GroupBox12);
+            resources.ApplyResources(this.guna2CustomGradientPanel10, "guna2CustomGradientPanel10");
+            this.guna2CustomGradientPanel10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            this.guna2CustomGradientPanel10.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2CustomGradientPanel10.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            this.guna2CustomGradientPanel10.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.guna2CustomGradientPanel10.Name = "guna2CustomGradientPanel10";
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderColor = System.Drawing.Color.SteelBlue;
+            this.guna2Button4.BorderRadius = 10;
+            this.guna2Button4.BorderThickness = 1;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2Button4, "guna2Button4");
+            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2Button4.Name = "guna2Button4";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.SteelBlue;
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox1, "guna2TextBox1");
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox1.PlaceholderText = "DepartementID";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2GroupBox12
+            // 
+            this.guna2GroupBox12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox12.BorderRadius = 20;
+            this.guna2GroupBox12.Controls.Add(this.LBDepEmail);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel35);
+            this.guna2GroupBox12.Controls.Add(this.guna2Separator6);
+            this.guna2GroupBox12.Controls.Add(this.guna2Separator7);
+            this.guna2GroupBox12.Controls.Add(this.guna2Separator8);
+            this.guna2GroupBox12.Controls.Add(this.guna2VSeparator2);
+            this.guna2GroupBox12.Controls.Add(this.LBDepCoursesLine2);
+            this.guna2GroupBox12.Controls.Add(this.LBDepCoursesLine1);
+            this.guna2GroupBox12.Controls.Add(this.LBDepMembers);
+            this.guna2GroupBox12.Controls.Add(this.LBDepContactNumber);
+            this.guna2GroupBox12.Controls.Add(this.LBHeadOfDep);
+            this.guna2GroupBox12.Controls.Add(this.LBDepName);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel34);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel36);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel37);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel38);
+            this.guna2GroupBox12.Controls.Add(this.guna2HtmlLabel39);
+            this.guna2GroupBox12.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2GroupBox12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2GroupBox12, "guna2GroupBox12");
+            this.guna2GroupBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2GroupBox12.Name = "guna2GroupBox12";
+            this.guna2GroupBox12.ShadowDecoration.Depth = 20;
+            this.guna2GroupBox12.UseTransparentBackground = true;
+            // 
+            // LBDepEmail
+            // 
+            this.LBDepEmail.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepEmail, "LBDepEmail");
+            this.LBDepEmail.Name = "LBDepEmail";
+            // 
+            // guna2HtmlLabel35
+            // 
+            this.guna2HtmlLabel35.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel35, "guna2HtmlLabel35");
+            this.guna2HtmlLabel35.Name = "guna2HtmlLabel35";
+            // 
+            // guna2Separator6
+            // 
+            this.guna2Separator6.FillColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.guna2Separator6, "guna2Separator6");
+            this.guna2Separator6.Name = "guna2Separator6";
+            // 
+            // guna2Separator7
+            // 
+            this.guna2Separator7.FillColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.guna2Separator7, "guna2Separator7");
+            this.guna2Separator7.Name = "guna2Separator7";
+            // 
+            // guna2Separator8
+            // 
+            this.guna2Separator8.FillColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.guna2Separator8, "guna2Separator8");
+            this.guna2Separator8.Name = "guna2Separator8";
+            // 
+            // guna2VSeparator2
+            // 
+            this.guna2VSeparator2.FillColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.guna2VSeparator2, "guna2VSeparator2");
+            this.guna2VSeparator2.Name = "guna2VSeparator2";
+            // 
+            // LBDepCoursesLine2
+            // 
+            this.LBDepCoursesLine2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepCoursesLine2, "LBDepCoursesLine2");
+            this.LBDepCoursesLine2.Name = "LBDepCoursesLine2";
+            // 
+            // LBDepCoursesLine1
+            // 
+            this.LBDepCoursesLine1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepCoursesLine1, "LBDepCoursesLine1");
+            this.LBDepCoursesLine1.Name = "LBDepCoursesLine1";
+            // 
+            // LBDepMembers
+            // 
+            this.LBDepMembers.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepMembers, "LBDepMembers");
+            this.LBDepMembers.Name = "LBDepMembers";
+            // 
+            // LBDepContactNumber
+            // 
+            this.LBDepContactNumber.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepContactNumber, "LBDepContactNumber");
+            this.LBDepContactNumber.Name = "LBDepContactNumber";
+            // 
+            // LBHeadOfDep
+            // 
+            this.LBHeadOfDep.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBHeadOfDep, "LBHeadOfDep");
+            this.LBHeadOfDep.Name = "LBHeadOfDep";
+            // 
+            // LBDepName
+            // 
+            this.LBDepName.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.LBDepName, "LBDepName");
+            this.LBDepName.Name = "LBDepName";
+            // 
+            // guna2HtmlLabel34
+            // 
+            this.guna2HtmlLabel34.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel34, "guna2HtmlLabel34");
+            this.guna2HtmlLabel34.Name = "guna2HtmlLabel34";
+            // 
+            // guna2HtmlLabel36
+            // 
+            this.guna2HtmlLabel36.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel36, "guna2HtmlLabel36");
+            this.guna2HtmlLabel36.Name = "guna2HtmlLabel36";
+            // 
+            // guna2HtmlLabel37
+            // 
+            this.guna2HtmlLabel37.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel37, "guna2HtmlLabel37");
+            this.guna2HtmlLabel37.Name = "guna2HtmlLabel37";
+            // 
+            // guna2HtmlLabel38
+            // 
+            this.guna2HtmlLabel38.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel38, "guna2HtmlLabel38");
+            this.guna2HtmlLabel38.Name = "guna2HtmlLabel38";
+            // 
+            // guna2HtmlLabel39
+            // 
+            this.guna2HtmlLabel39.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel39, "guna2HtmlLabel39");
+            this.guna2HtmlLabel39.Name = "guna2HtmlLabel39";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.Color.SteelBlue;
+            this.tabPage7.Controls.Add(this.guna2CustomGradientPanel11);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
+            this.tabPage7.Name = "tabPage7";
+            // 
+            // guna2CustomGradientPanel11
+            // 
+            this.guna2CustomGradientPanel11.BorderRadius = 30;
+            this.guna2CustomGradientPanel11.Controls.Add(this.guna2GroupBox13);
+            resources.ApplyResources(this.guna2CustomGradientPanel11, "guna2CustomGradientPanel11");
+            this.guna2CustomGradientPanel11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            this.guna2CustomGradientPanel11.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2CustomGradientPanel11.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            this.guna2CustomGradientPanel11.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.guna2CustomGradientPanel11.Name = "guna2CustomGradientPanel11";
+            // 
+            // guna2GroupBox13
+            // 
+            this.guna2GroupBox13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox13.BorderRadius = 20;
+            this.guna2GroupBox13.Controls.Add(this.guna2ComboBox1);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox2);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox3);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox4);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox5);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox6);
+            this.guna2GroupBox13.Controls.Add(this.guna2Button5);
+            this.guna2GroupBox13.Controls.Add(this.guna2TextBox7);
+            this.guna2GroupBox13.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2GroupBox13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2GroupBox13, "guna2GroupBox13");
+            this.guna2GroupBox13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2GroupBox13.Name = "guna2GroupBox13";
+            this.guna2GroupBox13.ShadowDecoration.CustomizableEdges.BottomLeft = false;
+            this.guna2GroupBox13.ShadowDecoration.CustomizableEdges.BottomRight = false;
+            this.guna2GroupBox13.ShadowDecoration.CustomizableEdges.TopLeft = false;
+            this.guna2GroupBox13.ShadowDecoration.CustomizableEdges.TopRight = false;
+            this.guna2GroupBox13.ShadowDecoration.Depth = 20;
+            this.guna2GroupBox13.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 5, 1, 5);
+            this.guna2GroupBox13.UseTransparentBackground = true;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderRadius = 15;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2ComboBox1, "guna2ComboBox1");
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            resources.GetString("guna2ComboBox1.Items"),
+            resources.GetString("guna2ComboBox1.Items1"),
+            resources.GetString("guna2ComboBox1.Items2"),
+            resources.GetString("guna2ComboBox1.Items3"),
+            resources.GetString("guna2ComboBox1.Items4"),
+            resources.GetString("guna2ComboBox1.Items5"),
+            resources.GetString("guna2ComboBox1.Items6"),
+            resources.GetString("guna2ComboBox1.Items7"),
+            resources.GetString("guna2ComboBox1.Items8"),
+            resources.GetString("guna2ComboBox1.Items9")});
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.StartIndex = 0;
+            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.Animated = true;
+            this.guna2TextBox2.BorderRadius = 15;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox2, "guna2TextBox2");
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox2.PlaceholderText = "ProfessorID";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.ShortcutsEnabled = false;
+            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.Animated = true;
+            this.guna2TextBox3.BorderRadius = 15;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox3, "guna2TextBox3");
+            this.guna2TextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox3.PlaceholderText = "Hours";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.ShortcutsEnabled = false;
+            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.Animated = true;
+            this.guna2TextBox4.BorderRadius = 15;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox4, "guna2TextBox4");
+            this.guna2TextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox4.PlaceholderText = "Credits";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.ShortcutsEnabled = false;
+            this.guna2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.Animated = true;
+            this.guna2TextBox5.BorderRadius = 15;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox5, "guna2TextBox5");
+            this.guna2TextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox5.PlaceholderText = "Course Name";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.ShortcutsEnabled = false;
+            this.guna2TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox6
+            // 
+            this.guna2TextBox6.Animated = true;
+            this.guna2TextBox6.BorderRadius = 15;
+            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox6.DefaultText = "";
+            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox6, "guna2TextBox6");
+            this.guna2TextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox6.Name = "guna2TextBox6";
+            this.guna2TextBox6.PasswordChar = '\0';
+            this.guna2TextBox6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox6.PlaceholderText = "DepartementID";
+            this.guna2TextBox6.SelectedText = "";
+            this.guna2TextBox6.ShortcutsEnabled = false;
+            this.guna2TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BorderRadius = 15;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            resources.ApplyResources(this.guna2Button5, "guna2Button5");
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Name = "guna2Button5";
+            // 
+            // guna2TextBox7
+            // 
+            this.guna2TextBox7.Animated = true;
+            this.guna2TextBox7.BorderRadius = 15;
+            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox7.DefaultText = "";
+            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox7.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox7, "guna2TextBox7");
+            this.guna2TextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox7.Multiline = true;
+            this.guna2TextBox7.Name = "guna2TextBox7";
+            this.guna2TextBox7.PasswordChar = '\0';
+            this.guna2TextBox7.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox7.PlaceholderText = "\r\n\r\nDescription";
+            this.guna2TextBox7.SelectedText = "";
+            this.guna2TextBox7.ShortcutsEnabled = false;
+            this.guna2TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.SteelBlue;
+            this.tabPage8.Controls.Add(this.guna2CustomGradientPanel12);
+            resources.ApplyResources(this.tabPage8, "tabPage8");
+            this.tabPage8.Name = "tabPage8";
+            // 
+            // guna2CustomGradientPanel12
+            // 
+            this.guna2CustomGradientPanel12.BorderRadius = 30;
+            this.guna2CustomGradientPanel12.Controls.Add(this.guna2GroupBox17);
+            resources.ApplyResources(this.guna2CustomGradientPanel12, "guna2CustomGradientPanel12");
+            this.guna2CustomGradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            this.guna2CustomGradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2CustomGradientPanel12.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            this.guna2CustomGradientPanel12.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.guna2CustomGradientPanel12.Name = "guna2CustomGradientPanel12";
+            // 
+            // guna2GroupBox17
+            // 
+            this.guna2GroupBox17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox17.BorderRadius = 20;
+            this.guna2GroupBox17.Controls.Add(this.guna2ComboBox2);
+            this.guna2GroupBox17.Controls.Add(this.guna2TextBox8);
+            this.guna2GroupBox17.Controls.Add(this.guna2TextBox16);
+            this.guna2GroupBox17.Controls.Add(this.guna2TextBox17);
+            this.guna2GroupBox17.Controls.Add(this.guna2TextBox18);
+            this.guna2GroupBox17.Controls.Add(this.guna2TextBox19);
+            this.guna2GroupBox17.Controls.Add(this.guna2Button6);
+            this.guna2GroupBox17.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2GroupBox17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2GroupBox17, "guna2GroupBox17");
+            this.guna2GroupBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2GroupBox17.Name = "guna2GroupBox17";
+            this.guna2GroupBox17.ShadowDecoration.Depth = 20;
+            this.guna2GroupBox17.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 2, 5);
+            this.guna2GroupBox17.UseTransparentBackground = true;
+            // 
+            // guna2ComboBox2
+            // 
+            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox2.BorderRadius = 15;
+            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox2.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2ComboBox2, "guna2ComboBox2");
+            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox2.Items.AddRange(new object[] {
+            resources.GetString("guna2ComboBox2.Items"),
+            resources.GetString("guna2ComboBox2.Items1"),
+            resources.GetString("guna2ComboBox2.Items2"),
+            resources.GetString("guna2ComboBox2.Items3"),
+            resources.GetString("guna2ComboBox2.Items4"),
+            resources.GetString("guna2ComboBox2.Items5"),
+            resources.GetString("guna2ComboBox2.Items6"),
+            resources.GetString("guna2ComboBox2.Items7"),
+            resources.GetString("guna2ComboBox2.Items8"),
+            resources.GetString("guna2ComboBox2.Items9")});
+            this.guna2ComboBox2.Name = "guna2ComboBox2";
+            this.guna2ComboBox2.StartIndex = 0;
+            this.guna2ComboBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox8
+            // 
+            this.guna2TextBox8.Animated = true;
+            this.guna2TextBox8.BorderRadius = 15;
+            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox8.DefaultText = "";
+            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox8, "guna2TextBox8");
+            this.guna2TextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Name = "guna2TextBox8";
+            this.guna2TextBox8.PasswordChar = '\0';
+            this.guna2TextBox8.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox8.PlaceholderText = "ProfessorID";
+            this.guna2TextBox8.SelectedText = "";
+            this.guna2TextBox8.ShortcutsEnabled = false;
+            this.guna2TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox16
+            // 
+            this.guna2TextBox16.Animated = true;
+            this.guna2TextBox16.BorderRadius = 15;
+            this.guna2TextBox16.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox16.DefaultText = "";
+            this.guna2TextBox16.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox16.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox16.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox16.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox16.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox16, "guna2TextBox16");
+            this.guna2TextBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox16.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox16.Name = "guna2TextBox16";
+            this.guna2TextBox16.PasswordChar = '\0';
+            this.guna2TextBox16.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox16.PlaceholderText = "Hours";
+            this.guna2TextBox16.SelectedText = "";
+            this.guna2TextBox16.ShortcutsEnabled = false;
+            this.guna2TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox17
+            // 
+            this.guna2TextBox17.Animated = true;
+            this.guna2TextBox17.BorderRadius = 15;
+            this.guna2TextBox17.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox17.DefaultText = "";
+            this.guna2TextBox17.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox17.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox17.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox17.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox17.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox17, "guna2TextBox17");
+            this.guna2TextBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox17.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox17.Name = "guna2TextBox17";
+            this.guna2TextBox17.PasswordChar = '\0';
+            this.guna2TextBox17.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox17.PlaceholderText = "Credits";
+            this.guna2TextBox17.SelectedText = "";
+            this.guna2TextBox17.ShortcutsEnabled = false;
+            this.guna2TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox18
+            // 
+            this.guna2TextBox18.Animated = true;
+            this.guna2TextBox18.BorderRadius = 15;
+            this.guna2TextBox18.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox18.DefaultText = "";
+            this.guna2TextBox18.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox18.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox18.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox18.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox18, "guna2TextBox18");
+            this.guna2TextBox18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox18.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox18.Name = "guna2TextBox18";
+            this.guna2TextBox18.PasswordChar = '\0';
+            this.guna2TextBox18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox18.PlaceholderText = "Course Name";
+            this.guna2TextBox18.SelectedText = "";
+            this.guna2TextBox18.ShortcutsEnabled = false;
+            this.guna2TextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox19
+            // 
+            this.guna2TextBox19.Animated = true;
+            this.guna2TextBox19.BorderRadius = 15;
+            this.guna2TextBox19.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox19.DefaultText = "";
+            this.guna2TextBox19.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox19.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox19.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox19.FillColor = System.Drawing.Color.LightCyan;
+            this.guna2TextBox19.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.guna2TextBox19, "guna2TextBox19");
+            this.guna2TextBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TextBox19.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox19.Multiline = true;
+            this.guna2TextBox19.Name = "guna2TextBox19";
+            this.guna2TextBox19.PasswordChar = '\0';
+            this.guna2TextBox19.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox19.PlaceholderText = "\r\n\r\nDescription";
+            this.guna2TextBox19.SelectedText = "";
+            this.guna2TextBox19.ShortcutsEnabled = false;
+            this.guna2TextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BorderRadius = 15;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            resources.ApplyResources(this.guna2Button6, "guna2Button6");
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.Name = "guna2Button6";
             // 
             // TLogout
             // 
@@ -3758,6 +4506,19 @@
             this.tabPage6.ResumeLayout(false);
             this.guna2CustomGradientPanel9.ResumeLayout(false);
             this.guna2GroupBox16.ResumeLayout(false);
+            this.TDepartements.ResumeLayout(false);
+            this.TCDepartementOP.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.guna2CustomGradientPanel10.ResumeLayout(false);
+            this.guna2GroupBox12.ResumeLayout(false);
+            this.guna2GroupBox12.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.guna2CustomGradientPanel11.ResumeLayout(false);
+            this.guna2GroupBox13.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.guna2CustomGradientPanel12.ResumeLayout(false);
+            this.guna2GroupBox17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4036,5 +4797,57 @@
         private Guna.UI2.WinForms.Guna2TextBox TXTBUCourseCredits;
         private Guna.UI2.WinForms.Guna2TextBox TXTBUCourseName;
         private Guna.UI2.WinForms.Guna2TextBox TXTBUDescription;
+        private Guna.UI2.WinForms.Guna2TabControl TCDepartementOP;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ListView LVDepartements;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
+        private System.Windows.Forms.TabPage tabPage4;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox12;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator6;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator7;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator8;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepCoursesLine2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepCoursesLine1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepMembers;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepContactNumber;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBHeadOfDep;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel34;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel36;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel37;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel38;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel39;
+        private System.Windows.Forms.TabPage tabPage7;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel11;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox13;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel12;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox17;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox16;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox17;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox18;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox19;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ColumnHeader columnHeader31;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LBDepEmail;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel35;
     }
 }

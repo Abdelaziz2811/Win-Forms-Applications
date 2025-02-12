@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -67,11 +68,11 @@ namespace UniversitySystem
             return Student;
         }
 
-        string CurrentDirectory = Directory.GetCurrentDirectory().Remove(48);
+        string CurrentDirectory = Directory.GetCurrentDirectory();
 
-        List<StStudents> GetStudentsRecords()
+        List<StStudents> GetStudentsRecordsFromFile()
         {
-            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Students.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Data\\Students.txt");
             string DataLine;
             string[] StudentInfo;
             
@@ -95,10 +96,12 @@ namespace UniversitySystem
             TCStudentsOP.SelectedIndex = 5;
             TCProfessorsOP.SelectedIndex = 4;
             TCCoursesOp.SelectedIndex = 2;
+            TCDepartementOP.SelectedIndex = 2;
 
-            LStudentsRecords = GetStudentsRecords();
-            LProfessorsRecords = GetProfessorRecords();
-            LCourses = GetCoursesRecords();
+            LStudentsRecords = GetStudentsRecordsFromFile();
+            LProfessorsRecords = GetProfessorRecordsFromFile();
+            LCourses = GetCoursesRecordsFromFile();
+            LDepartements = GetDepartementsRecordFromFile();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,7 +146,7 @@ namespace UniversitySystem
 
         void SaveChangesToFile()
         {
-            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Students.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Students.txt");
 
             foreach (StStudents Student in LStudentsRecords)
             {
@@ -435,7 +438,7 @@ namespace UniversitySystem
 
         void RefreshStudentsListsViews()
         {
-            LStudentsRecords = GetStudentsRecords();
+            LStudentsRecords = GetStudentsRecordsFromFile();
 
             // Refresh Students List
             LVStudentsList.Items.Clear();
@@ -490,7 +493,7 @@ namespace UniversitySystem
 
         void SaveStudentInfoToFile()
         {
-            File.AppendAllText(CurrentDirectory + "\\Students.txt",
+            File.AppendAllText(CurrentDirectory + "\\Data\\Students.txt",
                  ConvertStudentDataToDataLine() + "\n");  
         }
 
@@ -556,7 +559,7 @@ namespace UniversitySystem
 
         void SaveStudentInfoAfterUpdate()
         {
-            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Students.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Students.txt");
 
             foreach (StStudents Student in LStudentsRecords)
             {
@@ -679,9 +682,9 @@ namespace UniversitySystem
             return Professors;
         }
 
-        List<StProfessors> GetProfessorRecords()
+        List<StProfessors> GetProfessorRecordsFromFile()
         {
-            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Professors.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Data\\Professors.txt");
             string DataLine;
             string[] ProfessorInfo;
 
@@ -935,7 +938,7 @@ namespace UniversitySystem
 
         void SaveChangesToProfsFile()
         {
-            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Professors.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Professors.txt");
 
             foreach (StProfessors Professor in LProfessorsRecords)
             {
@@ -950,7 +953,7 @@ namespace UniversitySystem
 
         void RefreshProfessorsListsViews()
         {
-            LProfessorsRecords = GetProfessorRecords();
+            LProfessorsRecords = GetProfessorRecordsFromFile();
 
             // Refresh Professors List
             LVProfessorsList.Items.Clear();
@@ -984,7 +987,6 @@ namespace UniversitySystem
                 MessageBox.Show("Multipule selection is not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Please select a Professor to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
         private void TSMProfRefresh_Click(object sender, EventArgs e)
@@ -1014,7 +1016,7 @@ namespace UniversitySystem
 
         void SaveProfessorInfoAfterUpdate()
         {
-            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Professors.txt");
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Professors.txt");
 
             foreach (StProfessors Professor in LProfessorsRecords)
             {
@@ -1095,7 +1097,7 @@ namespace UniversitySystem
 
         void AddProfDataToFile()
         {
-            File.AppendAllText(CurrentDirectory + "\\Professors.txt",
+            File.AppendAllText(CurrentDirectory + "\\Data\\Professors.txt",
                  ConvertProfessorRecordToDataLine() + "\n");
         }
 
@@ -1153,9 +1155,9 @@ namespace UniversitySystem
             return Course;
         }
 
-        List<StCourses> GetCoursesRecords()
+        List<StCourses> GetCoursesRecordsFromFile()
         {
-            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Courses.txt");
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Data\\Courses.txt");
             string DataLine;
             string[] CourseData;
 
@@ -1293,7 +1295,7 @@ namespace UniversitySystem
 
         void RefreshCoursesListView()
         {
-            LCourses = GetCoursesRecords();
+            LCourses = GetCoursesRecordsFromFile();
 
             LVCourses.Items.Clear();
             ShowCoursesList();
@@ -1301,7 +1303,7 @@ namespace UniversitySystem
 
         void SaveCoursesInfoToFile()
         {
-            File.AppendAllText(CurrentDirectory + "\\Courses.txt",
+            File.AppendAllText(CurrentDirectory + "\\Data\\Courses.txt",
                 ConvertCourseRcordToDataLine() + "\n");
         }
 
@@ -1388,17 +1390,200 @@ namespace UniversitySystem
 
         }
 
+        StCourses UpdateCourseData(StCourses Course)
+        {
+            Course.Name = TXTBUCourseName.Text;
+            Course.Department = CBUCourseDepartement.Text;
+            Course.ProfessorID = TXTBUCourseProfID.Text;
+            Course.Hours = TXTBUCourseHours.Text;
+            Course.Credits = TXTBUCourseCredits.Text;
+            Course.Description = TXTBUDescription.Text;
+
+            return Course;
+        }
+
+        string ConvertCourseRcordToDataLine_Update(StCourses Course)
+        {
+            string DataLine = string.Empty;
+
+            DataLine += Course.ID + '#';
+            DataLine += Course.Name + '#';
+            DataLine += Course.Department + '#';
+            DataLine += Course.ProfessorID + '#';
+            DataLine += Course.Hours + '#';
+            DataLine += Course.Credits + '#';
+            DataLine += Course.Description;
+
+            return DataLine;
+        }
+
+        void ClearUpdateCourseTXTBoxes()
+        {
+            TXTBUCourseName.Clear();
+            TXTBUCourseProfID.Clear();
+            TXTBUCourseHours.Clear();
+            TXTBUCourseCredits.Clear();
+            TXTBUDescription.Clear();
+        }
+
+        void SaveCourseDataToFile_Update()
+        {
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Courses.txt");
+
+            foreach (StCourses Course in LCourses)
+            {
+                if (Course.ID == LVCourses.SelectedItems[0].SubItems[0].Text)
+                {
+                    Writer.WriteLine(ConvertCourseRcordToDataLine_Update(UpdateCourseData(Course)));
+                }
+                else
+                    Writer.WriteLine(ConvertCourseRcordToDataLine_Update(Course));
+            }
+
+            Writer.Close();
+        }
+
         private void BTNUpdateCourse_Click(object sender, EventArgs e)
         {
             if (!(string.IsNullOrWhiteSpace(TXTBUCourseName.Text) || string.IsNullOrWhiteSpace(CBUCourseDepartement.Text)
                 || string.IsNullOrWhiteSpace(TXTBUCourseProfID.Text) || string.IsNullOrWhiteSpace(TXTBUCourseHours.Text)
                 || string.IsNullOrWhiteSpace(TXTBUCourseCredits.Text) || string.IsNullOrWhiteSpace(TXTBUDescription.Text)))
             {
-
+                SaveCourseDataToFile_Update();
+                ClearUpdateCourseTXTBoxes();
+                RefreshCoursesListView();
+                MessageBox.Show("Course Updated successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else 
                 MessageBox.Show("Please enter a valid info","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }       
-    }           
+        }
+
+        string ConvertCourseRcordToDataLine(StCourses Course)
+        {
+            string DataLine = string.Empty;
+
+            DataLine += Course.ID + '#';
+            DataLine += Course.Name + '#';
+            DataLine += Course.ProfessorID + '#';
+            DataLine += Course.Department + '#';
+            DataLine += Course.Hours + '#';
+            DataLine += Course.Credits + '#';
+            DataLine += Course.Description;
+
+            return DataLine;
+        }
+        void SaveCourseDataToFile_Delete()
+        {
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Courses.txt");
+
+            foreach (StCourses Course in LCourses)
+            {
+                if (Course.ID != LVCourses.SelectedItems[0].SubItems[0].Text)
+                {
+                    Writer.WriteLine(ConvertCourseRcordToDataLine(Course));
+                }
+            }
+
+            Writer.Close();
+        }
+
+        private void TSMIDeleteCourse_Click(object sender, EventArgs e)
+        {
+            if (LVCourses.SelectedItems.Count == 1)
+            {
+                if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    SaveCourseDataToFile_Delete();
+                    MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LVCourses.SelectedItems[0].Remove();
+                    RefreshCoursesListView();
+                }
+                else
+                    MessageBox.Show("Saving changes is canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (LVCourses.SelectedItems.Count > 1)
+                MessageBox.Show("Multipule selection is not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Please select a Course to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void TSMIRefreshCourse_Click(object sender, EventArgs e)
+        {
+            RefreshCoursesListView();
+        }
+
+
+        struct StDepartements
+        {
+            public string ID;
+            public string Name;
+            public string HeadOfDepartement;
+            public string DepartmentMembers;
+            public string Courses;
+            public string ContactNumber;
+            public string Email;
+        }
+
+        StDepartements GetDepartementRecord(string[] DepartementData)
+        {
+            StDepartements Departement;
+
+            Departement.ID = DepartementData[0];
+            Departement.Name = DepartementData[1];
+            Departement.HeadOfDepartement = DepartementData[2];
+            Departement.DepartmentMembers = DepartementData[3];
+            Departement.Courses = DepartementData[4];
+            Departement.ContactNumber = DepartementData[5];
+            Departement.Email = DepartementData[6];
+
+            return Departement;
+        }
+
+        List<StDepartements> GetDepartementsRecordFromFile()
+        {
+            StreamReader Reader = new StreamReader(CurrentDirectory + "\\Data\\Departments.txt");
+            string DataLine;
+            string[] DepartementData;
+
+            List<StDepartements> DepartementsRecord = new List<StDepartements>();
+
+            while ((DataLine = Reader.ReadLine()) != null)
+            {
+                DepartementData = DataLine.Split('#');
+                DepartementsRecord.Add(GetDepartementRecord(DepartementData));
+            }
+
+            Reader.Close();
+            return DepartementsRecord;
+        }
+
+        List<StDepartements> LDepartements = new List<StDepartements>();
+
+        void ShowDepartementsList()
+        {
+            ListViewItem Item;
+
+            foreach (StDepartements Departement in LDepartements)
+            {
+                Item = new ListViewItem(Departement.ID);
+                Item.SubItems.Add(Departement.Name);
+                Item.SubItems.Add(Departement.HeadOfDepartement);
+                Item.SubItems.Add(Departement.DepartmentMembers);
+                Item.SubItems.Add(Departement.ContactNumber);
+                Item.SubItems.Add(Departement.Email);
+
+                LVDepartements.Items.Add(Item);
+            }
+        }
+
+        private void TCDepartementOP_Click(object sender, EventArgs e)
+        {
+            if (LVDepartements.Items.Count > 0)
+                return;
+
+            ShowDepartementsList();
+        }
+    }
 }               
           
