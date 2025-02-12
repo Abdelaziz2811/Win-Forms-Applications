@@ -1,0 +1,10 @@
+DP01#Computer Science#PROF004#6#Artificial Intelligence, Data Science, Software Engineering#+1-555-214-4804#cs.dept@university.edu
+DP02#Biology#PROF023#5#Microbiology, Botany, Genetics#+1-555-899-6506#bio.dept@university.edu
+DP03#Physics#PROF020#9#Quantum Physics, Thermodynamics, Astrophysics#+1-555-241-2333#phy.dept@university.edu
+DP04#Mathematics#PROF016#10#Algebra, Calculus, Statistics#+1-555-733-7831#math.dept@university.edu
+DP05#Engineering#PROF002#13#Mechanical Engineering, Civil Engineering, Electrical Engineering#+1-555-251-4550#eng.dept@university.edu
+DP06#Economics#PROF006#6#Macroeconomics, Microeconomics, International Trade#+1-555-619-7022#eco.dept@university.edu
+DP07#Psychology#PROF005#5#Clinical Psychology, Developmental Psychology, Cognitive Psychology#+1-555-600-4460#psy.dept@university.edu
+DP08#Art#PROF003#15#Visual Arts, Digital Arts, Sculpture#+1-555-891-5112#art.dept@university.edu
+DP09#Chemistry#PROF018#9#Organic Chemistry, Inorganic Chemistry, Biochemistry#+1-555-469-3792#chem.dept@university.edu
+DP10#History#PROF008#10#Ancient History, Modern History, World History#+1-555-354-8919#hist.dept@university.edu
