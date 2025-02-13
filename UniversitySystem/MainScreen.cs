@@ -311,7 +311,22 @@ namespace UniversitySystem
                 return false;
         }
 
-        void GetStudentsMainInfo()
+        void GetStudentsMainInfo(StStudents Student)
+        {
+            LBFirstName.Text = Student.FirstName;
+            LBLastName.Text = Student.LastName;
+            LBBirthDate.Text = Student.BirthDate;
+            LBGender.Text = Student.Gender.ToString();
+
+            LBStudentID.Text = Student.ID;
+            LBYearOfStudy.Text = Student.YearOfStudy;
+            LBMajor.Text = Student.Major;
+            LBCredits.Text = Student.CreditsEarned.ToString();
+            LBAchievements.Text = Student.Achievements;
+            LBGPA.Text = Student.GPA;
+        }
+
+        void GetStudentsMainInfoToView()
         {
             if (LVStudentsList.SelectedItems[0].SubItems[3].Text == "M")
                 PBStudentImage.Image = Resources.man;
@@ -322,18 +337,7 @@ namespace UniversitySystem
             {
                 if (Student.ID == LVStudentsList.SelectedItems[0].SubItems[0].Text)
                 {
-                    LBFirstName.Text = Student.FirstName;
-                    LBLastName.Text = Student.LastName;
-                    LBBirthDate.Text = Student.BirthDate;
-                    LBGender.Text = Student.Gender.ToString();
-
-                    LBStudentID.Text = Student.ID;
-                    LBYearOfStudy.Text = Student.YearOfStudy;
-                    LBMajor.Text = Student.Major;
-                    LBCredits.Text = Student.CreditsEarned.ToString();
-                    LBAchievements.Text = Student.Achievements;
-                    LBGPA.Text = Student.GPA;
-
+                    GetStudentsMainInfo(Student);
                     break;
                 }
             }
@@ -349,7 +353,7 @@ namespace UniversitySystem
             MTXTBoxBirthDate.Visible = true;
         }
 
-        void GetStudentsInfo()
+        void GetStudentsInfoToUpdate()
         {
             foreach (StStudents Student in LStudentsRecords)
             {
@@ -422,7 +426,7 @@ namespace UniversitySystem
                     if (!IsSomeItemSelected())
                         return;
 
-                    GetStudentsMainInfo();
+                    GetStudentsMainInfoToView();
 
                     break;
                 case "Update":
@@ -430,7 +434,7 @@ namespace UniversitySystem
                     if (!IsSomeItemSelected())
                         return;
 
-                    GetStudentsInfo();
+                    GetStudentsInfoToUpdate();
 
                     break;
             }
@@ -799,34 +803,39 @@ namespace UniversitySystem
             if (LVProfessorsList.SelectedItems.Count == 1) return true; else return false;
         }
 
-        void GetProfMainInfo()
+        void GetProfMainInfo(StProfessors Professor)
+        {
+            LBProfFirstName.Text = Professor.FirstName;
+            LBProfLastName.Text = Professor.LastName;
+            LBProfGender.Text = Professor.Gender.ToString();
+            LBProfID.Text = Professor.ID;
+            LBProfDepartement.Text = Professor.Department;
+            LBProfEmail.Text = Professor.Email;
+            LBProfSpecialization.Text = Professor.Specialization;
+            LBProfDateOfJoining.Text = Professor.DateOfJoining;
+            LBProfContactNumber.Text = Professor.ContactNumber;
+            LBProfQualifications.Text = Professor.Qualifications;
+
+            if (Professor.Gender == 'M')
+                PBProfessorImage.Image = Resources.man;
+            else if (Professor.Gender == 'F')
+                PBProfessorImage.Image = Resources.woman;
+        }
+
+        void GetProfMainInfoToView()
         {
             foreach(StProfessors Professor in LProfessorsRecords)
             {
                 if (Professor.ID == LVProfessorsList.SelectedItems[0].SubItems[0].Text)
                 {
-                    LBProfFirstName.Text = Professor.FirstName;
-                    LBProfLastName.Text = Professor.LastName;
-                    LBProfGender.Text = Professor.Gender.ToString();
-                    LBProfID.Text = Professor.ID;
-                    LBProfDepartement.Text = Professor.Department;
-                    LBProfEmail.Text = Professor.Email;
-                    LBProfSpecialization.Text = Professor.Specialization;
-                    LBProfDateOfJoining.Text = Professor.DateOfJoining;
-                    LBProfContactNumber.Text = Professor.ContactNumber;
-                    LBProfQualifications.Text = Professor.Qualifications;
 
-                    if (Professor.Gender == 'M')
-                        PBProfessorImage.Image = Resources.man;
-                    else if (Professor.Gender == 'F')
-                        PBProfessorImage.Image = Resources.woman;
-
+                    GetProfMainInfo(Professor);
                     break;
                 }
             }
         }
 
-        void GetProfessorInfo()
+        void GetProfessorInfoForUpdate()
         {
             foreach (StProfessors Professor in LProfessorsRecords)
             {
@@ -886,7 +895,7 @@ namespace UniversitySystem
                     if (!IsSomeItemSelectedProfsSection())
                         return;
 
-                    GetProfMainInfo();
+                    GetProfMainInfoToView();
 
                     break;
                 case "Update":
@@ -894,7 +903,7 @@ namespace UniversitySystem
                     if (!IsSomeItemSelectedProfsSection())
                         return;
 
-                    GetProfessorInfo();
+                    GetProfessorInfoForUpdate();
 
                     break;
             }
@@ -907,7 +916,6 @@ namespace UniversitySystem
                 TCProfessorsOP.SelectTab(3);
             else
                 MessageBox.Show("Please select a Professor to view", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
         private void TSMProfUpdate_Click(object sender, EventArgs e)
@@ -1214,19 +1222,16 @@ namespace UniversitySystem
 
             string[] Description = Course.Description.Split(' ');
 
-            string DescriptionLine1 = string.Empty;
-            string DescriptionLine2 = string.Empty;
+            LBCourseDescriptionLine1.Text = string.Empty;
+            LBCourseDescriptionLine2.Text = string.Empty;
 
-            short i;
+            byte i;
             
             for (i = 0; i <= Description.Length / 2; i++)
-                DescriptionLine1 += Description[i] + ' ';
+                LBCourseDescriptionLine1.Text += Description[i] + ' ';
 
-            for (short j = i; j < Description.Length; j++)
-                DescriptionLine2 += Description[j] + ' ';
-
-            LBCourseDescriptionLine1.Text = DescriptionLine1;
-            LBCourseDescriptionLine2.Text = DescriptionLine2;
+            for (byte j = i; j < Description.Length; j++)
+                LBCourseDescriptionLine2.Text += Description[j] + ' ';
         }
 
         bool FindCourse(string CourseID)
@@ -1251,7 +1256,7 @@ namespace UniversitySystem
                     MessageBox.Show("Course Not Found!\nEnter a valid Course ID", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-                MessageBox.Show("Please enter CourseID for search", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter CourseID To search on", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         bool IsCourseExists(string CourseID)
@@ -1259,9 +1264,7 @@ namespace UniversitySystem
             foreach (StCourses Course in LCourses)
             {
                 if (Course.ID == CourseID)
-                {
                     return true;
-                }
             }
 
             return false;
@@ -1519,7 +1522,7 @@ namespace UniversitySystem
             public string ID;
             public string Name;
             public string HeadOfDepartement;
-            public string DepartmentMembers;
+            public string MembersNumber;
             public string Courses;
             public string ContactNumber;
             public string Email;
@@ -1532,7 +1535,7 @@ namespace UniversitySystem
             Departement.ID = DepartementData[0];
             Departement.Name = DepartementData[1];
             Departement.HeadOfDepartement = DepartementData[2];
-            Departement.DepartmentMembers = DepartementData[3];
+            Departement.MembersNumber = DepartementData[3];
             Departement.Courses = DepartementData[4];
             Departement.ContactNumber = DepartementData[5];
             Departement.Email = DepartementData[6];
@@ -1569,7 +1572,7 @@ namespace UniversitySystem
                 Item = new ListViewItem(Departement.ID);
                 Item.SubItems.Add(Departement.Name);
                 Item.SubItems.Add(Departement.HeadOfDepartement);
-                Item.SubItems.Add(Departement.DepartmentMembers);
+                Item.SubItems.Add(Departement.MembersNumber);
                 Item.SubItems.Add(Departement.ContactNumber);
                 Item.SubItems.Add(Departement.Email);
 
@@ -1583,6 +1586,179 @@ namespace UniversitySystem
                 return;
 
             ShowDepartementsList();
+        }
+
+        void GetDepartementMainInfo(StDepartements Departement)
+        {
+            LBDepName.Text = Departement.Name;
+            LBHeadOfDep.Text = Departement.HeadOfDepartement;
+            LBDepContactNumber.Text = Departement.ContactNumber;
+            LBDepMembers.Text = Departement.MembersNumber;
+            LBDepEmail.Text = Departement.Email;
+
+            string[] Courses = Departement.Courses.Split(' ');
+
+            LBDepCoursesLine1.Text = string.Empty;
+            LBDepCoursesLine2.Text = string.Empty;
+
+            byte i;
+
+            for (i = 0; i <= Courses.Length / 2; i++)
+            {
+                LBDepCoursesLine1.Text += Courses[i] + ' ';
+            }
+
+            for (byte j = i; j < Courses.Length; j++)
+            {
+                LBDepCoursesLine2.Text += Courses[j] + ' ';
+            }
+        }
+
+        bool IsSomeDepartementSelected()
+        {
+            if (LVDepartements.SelectedItems.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        private void TSMIViewDep_Click(object sender, EventArgs e)
+        {
+            if (IsSomeDepartementSelected())
+            {
+                foreach (StDepartements Departement in LDepartements)
+                {
+                    if (Departement.ID == LVDepartements.SelectedItems[0].SubItems[0].Text)
+                    {
+                        GetDepartementMainInfo(Departement);
+                        break;
+                    }
+                }
+
+                TCDepartementOP.SelectTab(1);
+            }
+            else
+                MessageBox.Show("Please select a Departement to view", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void GetDepartementInfoToUpdate(StDepartements Departement)
+        {
+            TXTBUDepName.Text = Departement.Name;
+            TXTBUHeadOfDep.Text = Departement.HeadOfDepartement;
+            TXTBUDepMembersNumber.Text = Departement.MembersNumber;
+            TXTBUDepContactNumber.Text = Departement.ContactNumber;
+            TXTBUDepEmail.Text = Departement.Email;
+            TXTBUDepCourses.Text = Departement.Courses;
+        }
+
+        private void TSMIUpdateDep_Click(object sender, EventArgs e)
+        {
+            if (IsSomeDepartementSelected())
+            {
+                foreach (StDepartements Departement in LDepartements)
+                {
+                    if (Departement.ID == LVDepartements.SelectedItems[0].SubItems[0].Text)
+                    {
+                        GetDepartementInfoToUpdate(Departement);
+                        break;
+                    }
+                }
+
+                TCDepartementOP.SelectTab(3);
+            }
+            else
+                MessageBox.Show("Please select a Departement to Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void RefreshDepartementsListView()
+        {
+            LDepartements = GetDepartementsRecordFromFile();
+
+            LVDepartements.Clear();
+            ShowDepartementsList();
+        }
+
+        private void TSMIDeleteDep_Click(object sender, EventArgs e)
+        {
+            if (LVDepartements.SelectedItems.Count == 1)
+            {
+                if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    //SaveCourseDataToFile_Delete();
+                    MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LVDepartements.SelectedItems[0].Remove();
+                    RefreshDepartementsListView();
+                }
+                else
+                    MessageBox.Show("Saving changes is canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (LVDepartements.SelectedItems.Count > 1)
+                MessageBox.Show("Multipule selection is not supported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Please select a Departement to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void TSMIRefreshDep_Click(object sender, EventArgs e)
+        {
+            RefreshDepartementsListView();
+        }
+
+        bool FindDepartement(string DepartementID)
+        {
+            foreach(StDepartements Departement in LDepartements)
+            {
+                if (Departement.ID == DepartementID)
+                {
+                    GetDepartementMainInfo(Departement);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void BTNDepSearch_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBSDepartementID.Text)))
+            {
+                if (!FindDepartement(TXTBSDepartementID.Text))
+                    MessageBox.Show("Departement Not Found!\nEnter a valid DepartementID", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+                MessageBox.Show("Please enter DepartementID To search on", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        bool IsDepartement(string DepartementID)
+        {
+            foreach(StDepartements Departement in LDepartements)
+            {
+                if (Departement.ID == DepartementID)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private void BTNAddDep_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBDepID.Text) || string.IsNullOrWhiteSpace(TXTBDepName.Text)
+                || string.IsNullOrWhiteSpace(TXTBHeadOfDep.Text) || string.IsNullOrWhiteSpace(TXTBDepContactNumber.Text)
+                || string.IsNullOrWhiteSpace(TXTBDepEmail.Text) || string.IsNullOrWhiteSpace(TXTBDepCourses.Text)
+                || string.IsNullOrWhiteSpace(TXTBDepMembersNumber.Text)))
+            {
+                if (!IsDepartement(TXTBACourseID.Text))
+                {
+                    //SaveDepartementInfoToFile();
+                    //ClearDepartementAddTXTBoxes();
+                    //RefreshDepartementListView();
+                    MessageBox.Show("Departement added successfuly", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show($"Departement with ID {TXTBDepID.Text} is already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Please enter a valid info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }               
