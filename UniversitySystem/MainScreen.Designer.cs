@@ -236,6 +236,11 @@
             this.CHCourseDepartement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CHCourseHours = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CHCourseCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CMSCourseHandle = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSMIViewCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIUpdateCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIDeleteCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIRefreshCourse = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2CustomGradientPanel7 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.BTNCourseSearch = new Guna.UI2.WinForms.Guna2Button();
@@ -289,6 +294,11 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CMSDepartementHandle = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TSMIViewDep = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIUpdateDep = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIDeleteDep = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIRefreshDep = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guna2CustomGradientPanel10 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.BTNDepSearch = new Guna.UI2.WinForms.Guna2Button();
@@ -333,6 +343,23 @@
             this.TXTBUDepCourses = new Guna.UI2.WinForms.Guna2TextBox();
             this.BTNUpdateDep = new Guna.UI2.WinForms.Guna2Button();
             this.TLogout = new System.Windows.Forms.TabPage();
+            this.guna2CustomGradientPanel13 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.BTNLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2GroupBox19 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.TXTBCurrentUserPhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel42 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.TXTBCurrentUserEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel44 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GroupBox18 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.TXTBCurrentUserGender = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.TXTBCurrentUserLastName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.TXTBCurrentUser_UserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.TXTBCurrentUserFirstName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel31 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel33 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel40 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.PBUserPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox15 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -350,16 +377,7 @@
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TSMIViewCourse = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIUpdateCourse = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIDeleteCourse = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIRefreshCourse = new System.Windows.Forms.ToolStripMenuItem();
-            this.CMSCourseHandle = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.CMSDepartementHandle = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.TSMIViewDep = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIUpdateDep = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIDeleteDep = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIRefreshDep = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.CMSStudentHandle.SuspendLayout();
             this.TCSections.SuspendLayout();
             this.TStudents.SuspendLayout();
@@ -402,6 +420,7 @@
             this.TCourses.SuspendLayout();
             this.TCCoursesOp.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.CMSCourseHandle.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.guna2CustomGradientPanel7.SuspendLayout();
             this.guna2GroupBox11.SuspendLayout();
@@ -414,6 +433,7 @@
             this.TDepartements.SuspendLayout();
             this.TCDepartementOP.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.CMSDepartementHandle.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.guna2CustomGradientPanel10.SuspendLayout();
             this.guna2GroupBox12.SuspendLayout();
@@ -423,8 +443,11 @@
             this.tabPage8.SuspendLayout();
             this.guna2CustomGradientPanel12.SuspendLayout();
             this.guna2GroupBox17.SuspendLayout();
-            this.CMSCourseHandle.SuspendLayout();
-            this.CMSDepartementHandle.SuspendLayout();
+            this.TLogout.SuspendLayout();
+            this.guna2CustomGradientPanel13.SuspendLayout();
+            this.guna2GroupBox19.SuspendLayout();
+            this.guna2GroupBox18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBUserPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // CMSStudentHandle
@@ -2854,6 +2877,45 @@
             // 
             resources.ApplyResources(this.CHCourseCredits, "CHCourseCredits");
             // 
+            // CMSCourseHandle
+            // 
+            this.CMSCourseHandle.BackColor = System.Drawing.Color.SteelBlue;
+            this.CMSCourseHandle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIViewCourse,
+            this.TSMIUpdateCourse,
+            this.TSMIDeleteCourse,
+            this.TSMIRefreshCourse});
+            this.CMSCourseHandle.Name = "CMSCourseHandle";
+            resources.ApplyResources(this.CMSCourseHandle, "CMSCourseHandle");
+            // 
+            // TSMIViewCourse
+            // 
+            this.TSMIViewCourse.Image = global::UniversitySystem.Properties.Resources.search;
+            this.TSMIViewCourse.Name = "TSMIViewCourse";
+            resources.ApplyResources(this.TSMIViewCourse, "TSMIViewCourse");
+            this.TSMIViewCourse.Click += new System.EventHandler(this.TSMIViewCourse_Click);
+            // 
+            // TSMIUpdateCourse
+            // 
+            this.TSMIUpdateCourse.Image = global::UniversitySystem.Properties.Resources.changes;
+            this.TSMIUpdateCourse.Name = "TSMIUpdateCourse";
+            resources.ApplyResources(this.TSMIUpdateCourse, "TSMIUpdateCourse");
+            this.TSMIUpdateCourse.Click += new System.EventHandler(this.TSMIUpdateCourse_Click);
+            // 
+            // TSMIDeleteCourse
+            // 
+            this.TSMIDeleteCourse.Image = global::UniversitySystem.Properties.Resources.trash;
+            this.TSMIDeleteCourse.Name = "TSMIDeleteCourse";
+            resources.ApplyResources(this.TSMIDeleteCourse, "TSMIDeleteCourse");
+            this.TSMIDeleteCourse.Click += new System.EventHandler(this.TSMIDeleteCourse_Click);
+            // 
+            // TSMIRefreshCourse
+            // 
+            this.TSMIRefreshCourse.Image = global::UniversitySystem.Properties.Resources.reloading;
+            this.TSMIRefreshCourse.Name = "TSMIRefreshCourse";
+            resources.ApplyResources(this.TSMIRefreshCourse, "TSMIRefreshCourse");
+            this.TSMIRefreshCourse.Click += new System.EventHandler(this.TSMIRefreshCourse_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.SteelBlue;
@@ -3546,6 +3608,41 @@
             // 
             resources.ApplyResources(this.columnHeader31, "columnHeader31");
             // 
+            // CMSDepartementHandle
+            // 
+            this.CMSDepartementHandle.BackColor = System.Drawing.Color.SteelBlue;
+            this.CMSDepartementHandle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIViewDep,
+            this.TSMIUpdateDep,
+            this.TSMIDeleteDep,
+            this.TSMIRefreshDep});
+            this.CMSDepartementHandle.Name = "CMSDepartementHandle";
+            resources.ApplyResources(this.CMSDepartementHandle, "CMSDepartementHandle");
+            // 
+            // TSMIViewDep
+            // 
+            this.TSMIViewDep.Name = "TSMIViewDep";
+            resources.ApplyResources(this.TSMIViewDep, "TSMIViewDep");
+            this.TSMIViewDep.Click += new System.EventHandler(this.TSMIViewDep_Click);
+            // 
+            // TSMIUpdateDep
+            // 
+            this.TSMIUpdateDep.Name = "TSMIUpdateDep";
+            resources.ApplyResources(this.TSMIUpdateDep, "TSMIUpdateDep");
+            this.TSMIUpdateDep.Click += new System.EventHandler(this.TSMIUpdateDep_Click);
+            // 
+            // TSMIDeleteDep
+            // 
+            this.TSMIDeleteDep.Name = "TSMIDeleteDep";
+            resources.ApplyResources(this.TSMIDeleteDep, "TSMIDeleteDep");
+            this.TSMIDeleteDep.Click += new System.EventHandler(this.TSMIDeleteDep_Click);
+            // 
+            // TSMIRefreshDep
+            // 
+            this.TSMIRefreshDep.Name = "TSMIRefreshDep";
+            resources.ApplyResources(this.TSMIRefreshDep, "TSMIRefreshDep");
+            this.TSMIRefreshDep.Click += new System.EventHandler(this.TSMIRefreshDep_Click);
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.SteelBlue;
@@ -3952,6 +4049,7 @@
             this.TXTBDepCourses.SelectedText = "";
             this.TXTBDepCourses.ShortcutsEnabled = false;
             this.TXTBDepCourses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TXTBDepCourses.TextChanged += new System.EventHandler(this.TXTBDepCourses_TextChanged);
             // 
             // tabPage8
             // 
@@ -4141,12 +4239,167 @@
             resources.ApplyResources(this.BTNUpdateDep, "BTNUpdateDep");
             this.BTNUpdateDep.ForeColor = System.Drawing.Color.White;
             this.BTNUpdateDep.Name = "BTNUpdateDep";
+            this.BTNUpdateDep.Click += new System.EventHandler(this.BTNUpdateDep_Click);
             // 
             // TLogout
             // 
             this.TLogout.BackColor = System.Drawing.Color.SteelBlue;
+            this.TLogout.Controls.Add(this.guna2CustomGradientPanel13);
             resources.ApplyResources(this.TLogout, "TLogout");
             this.TLogout.Name = "TLogout";
+            // 
+            // guna2CustomGradientPanel13
+            // 
+            this.guna2CustomGradientPanel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel13.BorderRadius = 30;
+            this.guna2CustomGradientPanel13.Controls.Add(this.BTNLogout);
+            this.guna2CustomGradientPanel13.Controls.Add(this.guna2GroupBox19);
+            this.guna2CustomGradientPanel13.Controls.Add(this.guna2GroupBox18);
+            this.guna2CustomGradientPanel13.Controls.Add(this.PBUserPicture);
+            resources.ApplyResources(this.guna2CustomGradientPanel13, "guna2CustomGradientPanel13");
+            this.guna2CustomGradientPanel13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            this.guna2CustomGradientPanel13.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2CustomGradientPanel13.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            this.guna2CustomGradientPanel13.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.guna2CustomGradientPanel13.Name = "guna2CustomGradientPanel13";
+            // 
+            // BTNLogout
+            // 
+            this.BTNLogout.BorderColor = System.Drawing.Color.IndianRed;
+            this.BTNLogout.BorderRadius = 12;
+            this.BTNLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(116)))), ((int)(((byte)(181)))));
+            resources.ApplyResources(this.BTNLogout, "BTNLogout");
+            this.BTNLogout.ForeColor = System.Drawing.Color.White;
+            this.BTNLogout.Name = "BTNLogout";
+            this.BTNLogout.Click += new System.EventHandler(this.BTNLogout_Click);
+            // 
+            // guna2GroupBox19
+            // 
+            this.guna2GroupBox19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox19.BorderRadius = 20;
+            this.guna2GroupBox19.Controls.Add(this.TXTBCurrentUserPhone);
+            this.guna2GroupBox19.Controls.Add(this.guna2HtmlLabel42);
+            this.guna2GroupBox19.Controls.Add(this.TXTBCurrentUserEmail);
+            this.guna2GroupBox19.Controls.Add(this.guna2HtmlLabel44);
+            this.guna2GroupBox19.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2GroupBox19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2GroupBox19, "guna2GroupBox19");
+            this.guna2GroupBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2GroupBox19.Name = "guna2GroupBox19";
+            this.guna2GroupBox19.ShadowDecoration.Depth = 20;
+            this.guna2GroupBox19.UseTransparentBackground = true;
+            // 
+            // TXTBCurrentUserPhone
+            // 
+            this.TXTBCurrentUserPhone.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUserPhone, "TXTBCurrentUserPhone");
+            this.TXTBCurrentUserPhone.Name = "TXTBCurrentUserPhone";
+            // 
+            // guna2HtmlLabel42
+            // 
+            this.guna2HtmlLabel42.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel42, "guna2HtmlLabel42");
+            this.guna2HtmlLabel42.Name = "guna2HtmlLabel42";
+            // 
+            // TXTBCurrentUserEmail
+            // 
+            this.TXTBCurrentUserEmail.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUserEmail, "TXTBCurrentUserEmail");
+            this.TXTBCurrentUserEmail.Name = "TXTBCurrentUserEmail";
+            // 
+            // guna2HtmlLabel44
+            // 
+            this.guna2HtmlLabel44.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel44, "guna2HtmlLabel44");
+            this.guna2HtmlLabel44.Name = "guna2HtmlLabel44";
+            // 
+            // guna2GroupBox18
+            // 
+            this.guna2GroupBox18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox18.BorderRadius = 20;
+            this.guna2GroupBox18.Controls.Add(this.TXTBCurrentUserGender);
+            this.guna2GroupBox18.Controls.Add(this.TXTBCurrentUserLastName);
+            this.guna2GroupBox18.Controls.Add(this.TXTBCurrentUser_UserName);
+            this.guna2GroupBox18.Controls.Add(this.TXTBCurrentUserFirstName);
+            this.guna2GroupBox18.Controls.Add(this.guna2HtmlLabel31);
+            this.guna2GroupBox18.Controls.Add(this.guna2HtmlLabel32);
+            this.guna2GroupBox18.Controls.Add(this.guna2HtmlLabel33);
+            this.guna2GroupBox18.Controls.Add(this.guna2HtmlLabel40);
+            this.guna2GroupBox18.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(143)))), ((int)(((byte)(202)))));
+            this.guna2GroupBox18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            resources.ApplyResources(this.guna2GroupBox18, "guna2GroupBox18");
+            this.guna2GroupBox18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2GroupBox18.Name = "guna2GroupBox18";
+            this.guna2GroupBox18.ShadowDecoration.Depth = 20;
+            this.guna2GroupBox18.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 2, 5);
+            this.guna2GroupBox18.UseTransparentBackground = true;
+            // 
+            // TXTBCurrentUserGender
+            // 
+            this.TXTBCurrentUserGender.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUserGender, "TXTBCurrentUserGender");
+            this.TXTBCurrentUserGender.Name = "TXTBCurrentUserGender";
+            // 
+            // TXTBCurrentUserLastName
+            // 
+            this.TXTBCurrentUserLastName.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUserLastName, "TXTBCurrentUserLastName");
+            this.TXTBCurrentUserLastName.Name = "TXTBCurrentUserLastName";
+            // 
+            // TXTBCurrentUser_UserName
+            // 
+            this.TXTBCurrentUser_UserName.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUser_UserName, "TXTBCurrentUser_UserName");
+            this.TXTBCurrentUser_UserName.Name = "TXTBCurrentUser_UserName";
+            // 
+            // TXTBCurrentUserFirstName
+            // 
+            this.TXTBCurrentUserFirstName.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TXTBCurrentUserFirstName, "TXTBCurrentUserFirstName");
+            this.TXTBCurrentUserFirstName.Name = "TXTBCurrentUserFirstName";
+            // 
+            // guna2HtmlLabel31
+            // 
+            this.guna2HtmlLabel31.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel31, "guna2HtmlLabel31");
+            this.guna2HtmlLabel31.Name = "guna2HtmlLabel31";
+            // 
+            // guna2HtmlLabel32
+            // 
+            this.guna2HtmlLabel32.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel32, "guna2HtmlLabel32");
+            this.guna2HtmlLabel32.Name = "guna2HtmlLabel32";
+            // 
+            // guna2HtmlLabel33
+            // 
+            this.guna2HtmlLabel33.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel33, "guna2HtmlLabel33");
+            this.guna2HtmlLabel33.Name = "guna2HtmlLabel33";
+            // 
+            // guna2HtmlLabel40
+            // 
+            this.guna2HtmlLabel40.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.guna2HtmlLabel40, "guna2HtmlLabel40");
+            this.guna2HtmlLabel40.Name = "guna2HtmlLabel40";
+            // 
+            // PBUserPicture
+            // 
+            this.PBUserPicture.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.PBUserPicture, "PBUserPicture");
+            this.PBUserPicture.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(227)))), ((int)(((byte)(249)))));
+            this.PBUserPicture.ImageRotate = 0F;
+            this.PBUserPicture.Name = "PBUserPicture";
+            this.PBUserPicture.ShadowDecoration.BorderRadius = 0;
+            this.PBUserPicture.ShadowDecoration.Depth = 10;
+            this.PBUserPicture.ShadowDecoration.Enabled = true;
+            this.PBUserPicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PBUserPicture.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(6, 4, 6, 6);
+            this.PBUserPicture.TabStop = false;
+            this.PBUserPicture.UseTransparentBackground = true;
             // 
             // guna2GroupBox15
             // 
@@ -4402,86 +4655,19 @@
             // 
             resources.ApplyResources(this.columnHeader18, "columnHeader18");
             // 
-            // TSMIViewCourse
+            // guna2BorderlessForm1
             // 
-            this.TSMIViewCourse.Image = global::UniversitySystem.Properties.Resources.search;
-            this.TSMIViewCourse.Name = "TSMIViewCourse";
-            resources.ApplyResources(this.TSMIViewCourse, "TSMIViewCourse");
-            this.TSMIViewCourse.Click += new System.EventHandler(this.TSMIViewCourse_Click);
-            // 
-            // TSMIUpdateCourse
-            // 
-            this.TSMIUpdateCourse.Image = global::UniversitySystem.Properties.Resources.changes;
-            this.TSMIUpdateCourse.Name = "TSMIUpdateCourse";
-            resources.ApplyResources(this.TSMIUpdateCourse, "TSMIUpdateCourse");
-            this.TSMIUpdateCourse.Click += new System.EventHandler(this.TSMIUpdateCourse_Click);
-            // 
-            // TSMIDeleteCourse
-            // 
-            this.TSMIDeleteCourse.Image = global::UniversitySystem.Properties.Resources.trash;
-            this.TSMIDeleteCourse.Name = "TSMIDeleteCourse";
-            resources.ApplyResources(this.TSMIDeleteCourse, "TSMIDeleteCourse");
-            this.TSMIDeleteCourse.Click += new System.EventHandler(this.TSMIDeleteCourse_Click);
-            // 
-            // TSMIRefreshCourse
-            // 
-            this.TSMIRefreshCourse.Image = global::UniversitySystem.Properties.Resources.reloading;
-            this.TSMIRefreshCourse.Name = "TSMIRefreshCourse";
-            resources.ApplyResources(this.TSMIRefreshCourse, "TSMIRefreshCourse");
-            this.TSMIRefreshCourse.Click += new System.EventHandler(this.TSMIRefreshCourse_Click);
-            // 
-            // CMSCourseHandle
-            // 
-            this.CMSCourseHandle.BackColor = System.Drawing.Color.SteelBlue;
-            this.CMSCourseHandle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMIViewCourse,
-            this.TSMIUpdateCourse,
-            this.TSMIDeleteCourse,
-            this.TSMIRefreshCourse});
-            this.CMSCourseHandle.Name = "CMSCourseHandle";
-            resources.ApplyResources(this.CMSCourseHandle, "CMSCourseHandle");
-            // 
-            // CMSDepartementHandle
-            // 
-            this.CMSDepartementHandle.BackColor = System.Drawing.Color.SteelBlue;
-            this.CMSDepartementHandle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMIViewDep,
-            this.TSMIUpdateDep,
-            this.TSMIDeleteDep,
-            this.TSMIRefreshDep});
-            this.CMSDepartementHandle.Name = "CMSDepartementHandle";
-            resources.ApplyResources(this.CMSDepartementHandle, "CMSDepartementHandle");
-            // 
-            // TSMIViewDep
-            // 
-            this.TSMIViewDep.Name = "TSMIViewDep";
-            resources.ApplyResources(this.TSMIViewDep, "TSMIViewDep");
-            this.TSMIViewDep.Click += new System.EventHandler(this.TSMIViewDep_Click);
-            // 
-            // TSMIUpdateDep
-            // 
-            this.TSMIUpdateDep.Name = "TSMIUpdateDep";
-            resources.ApplyResources(this.TSMIUpdateDep, "TSMIUpdateDep");
-            this.TSMIUpdateDep.Click += new System.EventHandler(this.TSMIUpdateDep_Click);
-            // 
-            // TSMIDeleteDep
-            // 
-            this.TSMIDeleteDep.Name = "TSMIDeleteDep";
-            resources.ApplyResources(this.TSMIDeleteDep, "TSMIDeleteDep");
-            this.TSMIDeleteDep.Click += new System.EventHandler(this.TSMIDeleteDep_Click);
-            // 
-            // TSMIRefreshDep
-            // 
-            this.TSMIRefreshDep.Name = "TSMIRefreshDep";
-            resources.ApplyResources(this.TSMIRefreshDep, "TSMIRefreshDep");
-            this.TSMIRefreshDep.Click += new System.EventHandler(this.TSMIRefreshDep_Click);
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // MainScreen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TCSections);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainScreen";
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.CMSStudentHandle.ResumeLayout(false);
@@ -4532,6 +4718,7 @@
             this.TCourses.ResumeLayout(false);
             this.TCCoursesOp.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.CMSCourseHandle.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.guna2CustomGradientPanel7.ResumeLayout(false);
             this.guna2GroupBox11.ResumeLayout(false);
@@ -4545,6 +4732,7 @@
             this.TDepartements.ResumeLayout(false);
             this.TCDepartementOP.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.CMSDepartementHandle.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.guna2CustomGradientPanel10.ResumeLayout(false);
             this.guna2GroupBox12.ResumeLayout(false);
@@ -4555,8 +4743,13 @@
             this.tabPage8.ResumeLayout(false);
             this.guna2CustomGradientPanel12.ResumeLayout(false);
             this.guna2GroupBox17.ResumeLayout(false);
-            this.CMSCourseHandle.ResumeLayout(false);
-            this.CMSDepartementHandle.ResumeLayout(false);
+            this.TLogout.ResumeLayout(false);
+            this.guna2CustomGradientPanel13.ResumeLayout(false);
+            this.guna2GroupBox19.ResumeLayout(false);
+            this.guna2GroupBox19.PerformLayout();
+            this.guna2GroupBox18.ResumeLayout(false);
+            this.guna2GroupBox18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBUserPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4892,5 +5085,23 @@
         private System.Windows.Forms.ToolStripMenuItem TSMIUpdateDep;
         private System.Windows.Forms.ToolStripMenuItem TSMIDeleteDep;
         private System.Windows.Forms.ToolStripMenuItem TSMIRefreshDep;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel13;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox18;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUserGender;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUserLastName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUserFirstName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel31;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel33;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel40;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox PBUserPicture;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox19;
+        private Guna.UI2.WinForms.Guna2Button BTNLogout;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUserPhone;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel42;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUserEmail;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel44;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TXTBCurrentUser_UserName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

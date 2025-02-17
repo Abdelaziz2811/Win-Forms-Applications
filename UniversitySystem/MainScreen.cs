@@ -91,6 +91,21 @@ namespace UniversitySystem
 
         List<StStudents> LStudentsRecords = new List<StStudents>();
 
+        void GetCurrentUserInfo()
+        {
+            TXTBCurrentUserFirstName.Text = LogIn.CurrentUser.FirstName;
+            TXTBCurrentUserLastName.Text = LogIn.CurrentUser.LastName;
+            TXTBCurrentUser_UserName.Text = LogIn.CurrentUser.UserName;
+            TXTBCurrentUserGender.Text = LogIn.CurrentUser.Gender;
+            TXTBCurrentUserEmail.Text = LogIn.CurrentUser.Email;
+            TXTBCurrentUserPhone.Text = LogIn.CurrentUser.Phone;
+
+            if (LogIn.CurrentUser.Gender == "Male")
+                PBUserPicture.Image = Resources.man;
+            else
+                PBUserPicture.Image = Resources.woman;
+        }
+
         private void MainScreen_Load(object sender, EventArgs e)
         {
             TCStudentsOP.SelectedIndex = 5;
@@ -102,6 +117,8 @@ namespace UniversitySystem
             LProfessorsRecords = GetProfessorRecordsFromFile();
             LCourses = GetCoursesRecordsFromFile();
             LDepartements = GetDepartementsRecordFromFile();
+
+            GetCurrentUserInfo();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1333,7 +1350,7 @@ namespace UniversitySystem
 
         private void BTNADescription_TextChanged(object sender, EventArgs e)
         {
-            TXTBADescription.PlaceholderText = "";
+            TXTBADescription.PlaceholderText = string.Empty;
         }
 
         bool IsSomeCourseSelected()
@@ -1528,6 +1545,11 @@ namespace UniversitySystem
             public string Email;
         }
 
+        enum enDepOperationMode
+        {
+            Delete, Update
+        }
+
         StDepartements GetDepartementRecord(string[] DepartementData)
         {
             StDepartements Departement;
@@ -1674,8 +1696,58 @@ namespace UniversitySystem
         {
             LDepartements = GetDepartementsRecordFromFile();
 
-            LVDepartements.Clear();
+            LVDepartements.Items.Clear();
             ShowDepartementsList();
+        }
+
+        string ConvertDepartementRecordToDataLine(StDepartements Departement)
+        {
+            string DataLine = string.Empty;
+
+            DataLine += Departement.ID + '#';
+            DataLine += Departement.Name + '#';
+            DataLine += Departement.HeadOfDepartement + '#';
+            DataLine += Departement.MembersNumber + '#';
+            DataLine += Departement.Courses + '#';
+            DataLine += Departement.ContactNumber + '#';
+            DataLine += Departement.Email;
+
+            return DataLine;
+        }
+
+        StDepartements UpdateDepartementInfo(StDepartements Departement)
+        {
+            Departement.Name = TXTBUDepName.Text;
+            Departement.HeadOfDepartement = TXTBUHeadOfDep.Text;
+            Departement.MembersNumber = TXTBUDepMembersNumber.Text;
+            Departement.Courses = TXTBUDepCourses.Text;
+            Departement.ContactNumber = TXTBUDepContactNumber.Text;
+            Departement.Email = TXTBUDepEmail.Text;
+
+            return Departement;
+        }
+
+        void SaveDepartementDataToFile(enDepOperationMode OperationMode)
+        {
+            StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\Departments.txt");
+
+            foreach (StDepartements Departement in LDepartements)
+            {
+                if (OperationMode == enDepOperationMode.Delete)
+                {
+                    if (Departement.ID != LVDepartements.SelectedItems[0].SubItems[0].Text)
+                        Writer.WriteLine(ConvertDepartementRecordToDataLine(Departement));
+                }
+                else if (OperationMode == enDepOperationMode.Update)
+                {
+                    if (Departement.ID != LVDepartements.SelectedItems[0].SubItems[0].Text)
+                        Writer.WriteLine(ConvertDepartementRecordToDataLine(Departement));
+                    else
+                        Writer.WriteLine(ConvertDepartementRecordToDataLine(UpdateDepartementInfo(Departement)));
+                }  
+            }
+
+            Writer.Close();
         }
 
         private void TSMIDeleteDep_Click(object sender, EventArgs e)
@@ -1684,7 +1756,7 @@ namespace UniversitySystem
             {
                 if (MessageBox.Show("Do you want to save the changes to file", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
-                    //SaveCourseDataToFile_Delete();
+                    SaveDepartementDataToFile(enDepOperationMode.Delete);
                     MessageBox.Show("Changes Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LVDepartements.SelectedItems[0].Remove();
@@ -1729,7 +1801,7 @@ namespace UniversitySystem
                 MessageBox.Show("Please enter DepartementID To search on", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        bool IsDepartement(string DepartementID)
+        bool IsDepartementExists(string DepartementID)
         {
             foreach(StDepartements Departement in LDepartements)
             {
@@ -1740,6 +1812,43 @@ namespace UniversitySystem
             return false;
         }
 
+        private void TXTBDepCourses_TextChanged(object sender, EventArgs e)
+        {
+            TXTBDepCourses.PlaceholderText = string.Empty;
+        }
+
+        string ConvertDepartmentRcordToDataLine()
+        {
+            string DataLine = string.Empty;
+
+            DataLine += TXTBDepID.Text + '#';
+            DataLine += TXTBDepName.Text + '#';
+            DataLine += TXTBHeadOfDep.Text + '#';
+            DataLine += TXTBDepMembersNumber.Text + '#';
+            DataLine += TXTBDepCourses.Text + '#';
+            DataLine += TXTBDepContactNumber.Text + '#';
+            DataLine += TXTBDepEmail.Text;
+
+            return DataLine;
+        }
+
+        void SaveDepartmentInfoToFile()
+        {
+            File.AppendAllText(CurrentDirectory + "\\Data\\Departments.txt",
+                ConvertDepartmentRcordToDataLine() + "\n");
+        }
+
+        void ClearDepartementTXTBoxes_Add()
+        {
+            TXTBDepID.Clear();
+            TXTBDepName.Clear();
+            TXTBHeadOfDep.Clear();
+            TXTBDepMembersNumber.Clear();
+            TXTBDepCourses.Clear();
+            TXTBDepContactNumber.Clear();
+            TXTBDepEmail.Clear();
+        }
+
         private void BTNAddDep_Click(object sender, EventArgs e)
         {
             if (!(string.IsNullOrWhiteSpace(TXTBDepID.Text) || string.IsNullOrWhiteSpace(TXTBDepName.Text)
@@ -1747,11 +1856,11 @@ namespace UniversitySystem
                 || string.IsNullOrWhiteSpace(TXTBDepEmail.Text) || string.IsNullOrWhiteSpace(TXTBDepCourses.Text)
                 || string.IsNullOrWhiteSpace(TXTBDepMembersNumber.Text)))
             {
-                if (!IsDepartement(TXTBACourseID.Text))
+                if (!IsDepartementExists(TXTBACourseID.Text))
                 {
-                    //SaveDepartementInfoToFile();
-                    //ClearDepartementAddTXTBoxes();
-                    //RefreshDepartementListView();
+                    SaveDepartmentInfoToFile();
+                    ClearDepartementTXTBoxes_Add();
+                    RefreshDepartementsListView();
                     MessageBox.Show("Departement added successfuly", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -1760,6 +1869,35 @@ namespace UniversitySystem
             else
                 MessageBox.Show("Please enter a valid info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        void ClearDepartmentsTXTBoxes_Update()
+        {
+            TXTBUDepName.Clear();
+            TXTBUHeadOfDep.Clear();
+            TXTBUDepMembersNumber.Clear();
+            TXTBUDepCourses.Clear();
+            TXTBUDepContactNumber.Clear();
+            TXTBUDepEmail.Clear();
+        }
+
+        private void BTNUpdateDep_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(TXTBUDepName.Text) || string.IsNullOrWhiteSpace(TXTBUHeadOfDep.Text)
+                || string.IsNullOrWhiteSpace(TXTBUDepMembersNumber.Text) || string.IsNullOrWhiteSpace(TXTBUDepCourses.Text)
+                || string.IsNullOrWhiteSpace(TXTBUDepContactNumber.Text) || string.IsNullOrWhiteSpace(TXTBUDepEmail.Text)))
+            {
+                SaveDepartementDataToFile(enDepOperationMode.Update);
+                ClearDepartmentsTXTBoxes_Update();
+                RefreshDepartementsListView();
+                MessageBox.Show("Department Updated successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Please enter a valid info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void BTNLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
-}               
-          
+}

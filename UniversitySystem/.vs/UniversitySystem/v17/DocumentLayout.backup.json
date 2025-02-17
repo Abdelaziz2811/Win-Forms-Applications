@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|C:\\Users\\admin\\source\\repos\\UniversitySystem\\mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|c:\\users\\admin\\source\\repos\\universitysystem\\mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|C:\\Users\\admin\\source\\repos\\UniversitySystem\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|C:\\Users\\admin\\source\\repos\\UniversitySystem\\mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|C:\\Users\\admin\\source\\repos\\UniversitySystem\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|c:\\users\\admin\\source\\repos\\universitysystem\\mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{504A750D-AE28-4FEF-8393-6A706610A427}|UniversitySystem.csproj|solutionrelative:mainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainScreen.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\MainScreen.cs",
               "RelativeDocumentMoniker": "MainScreen.cs",
               "ToolTip": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\MainScreen.cs*",
               "RelativeToolTip": "MainScreen.cs*",
-              "ViewState": "AgIAAJgGAAAANDMzMzMbwJYGAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAFkHAAAAAAAAAAAswGsHAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T20:26:05.421Z",
               "EditorCaption": ""
@@ -55,26 +55,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "LogIn.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs",
               "RelativeDocumentMoniker": "LogIn.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs",
-              "RelativeToolTip": "LogIn.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAABmvXEAAABNAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs*",
+              "RelativeToolTip": "LogIn.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T20:25:47.923Z"
+              "WhenOpened": "2025-02-11T20:25:47.923Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LogIn.cs [Design]",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs",
               "RelativeDocumentMoniker": "LogIn.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs [Design]",
-              "RelativeToolTip": "LogIn.cs [Design]",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\UniversitySystem\\LogIn.cs [Design]*",
+              "RelativeToolTip": "LogIn.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T20:25:42.468Z"
+              "WhenOpened": "2025-02-11T20:25:42.468Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

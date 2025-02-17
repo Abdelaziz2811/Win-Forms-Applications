@@ -23,12 +23,13 @@ namespace UniversitySystem
         byte Trials = 3;
         byte Time = 30;
 
-        struct stUser
+        public struct stUsers
         {
             public string UserName;
             public string Password;
             public string FirstName;
             public string LastName;
+            public string Gender;
             public string Email;
             public string Phone;
             public bool RememberMe;
@@ -40,16 +41,17 @@ namespace UniversitySystem
             public string Password;
         }
 
-        stUser ConvertDataLineToRecord(string[] UserInfo)
+        stUsers ConvertDataLineToRecord(string[] UserInfo)
         {
-            stUser User = new stUser();
+            stUsers User = new stUsers();
 
             User.UserName = UserInfo[0];
             User.Password = UserInfo[1];
             User.FirstName = UserInfo[2];
             User.LastName = UserInfo[3];
-            User.Email = UserInfo[4];
-            User.Phone = UserInfo[5];
+            User.Gender = UserInfo[4];
+            User.Email = UserInfo[5];
+            User.Phone = UserInfo[6];
 
             if (CBRememberMe.Checked)
                 User.RememberMe = true;
@@ -59,9 +61,9 @@ namespace UniversitySystem
 
         string CurrentDirectory = Directory.GetCurrentDirectory();
 
-        List<stUser> GetUserInfoFromFile(string Path)
+        List<stUsers> GetUserInfoFromFile(string Path)
         {
-            List<stUser> LUsers = new List<stUser>();
+            List<stUsers> LUsers = new List<stUsers>();
            
             StreamReader Reader = new StreamReader(CurrentDirectory + Path);
             string DataLine;
@@ -85,14 +87,18 @@ namespace UniversitySystem
             LBTrials.Text = "You have " + Trials + " Trials left";     
         }
 
+        public static stUsers CurrentUser;
+
         bool IsUserRegistered()
         {
-            List<stUser> LUsers = GetUserInfoFromFile("\\Data\\Users.txt");
+            List<stUsers> LUsers = GetUserInfoFromFile("\\Data\\Users.txt");
 
-            foreach (stUser User in LUsers)
+            foreach (stUsers User in LUsers)
             {
                 if (User.UserName == TxTBUserName.Text && TxTBPassword.Text == User.Password)
                 {
+                    CurrentUser = User; // This is the current user
+
                     if (User.RememberMe)
                     {
                         StreamWriter Writer = new StreamWriter(CurrentDirectory + "\\Data\\RememberedUsers.txt");
@@ -130,6 +136,9 @@ namespace UniversitySystem
         {
             if (!IsUserRegistered())
                  return;
+
+            TxTBUserName.Clear();
+            TxTBPassword.Clear();
 
             Form Frm = new MainScreen();
             Frm.ShowDialog();
