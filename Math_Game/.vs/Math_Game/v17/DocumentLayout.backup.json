@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\Math_Game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|C:\\Users\\admin\\source\\repos\\Math_Game\\math_game\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|C:\\Users\\admin\\source\\repos\\Math_Game\\math_game\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|C:\\Users\\admin\\source\\repos\\Math_Game\\math_game\\gameresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\gameresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|C:\\Users\\admin\\source\\repos\\Math_Game\\math_game\\gameresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\gameresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|c:\\users\\admin\\source\\repos\\math_game\\math_game\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|C:\\Users\\admin\\source\\repos\\Math_Game\\math_game\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAA20B-633D-48C4-8C7A-5033D7507E36}|Math_Game\\Math_Game.csproj|solutionrelative:math_game\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameResults.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\GameResults.cs",
+              "RelativeDocumentMoniker": "Math_Game\\GameResults.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\GameResults.cs*",
+              "RelativeToolTip": "Math_Game\\GameResults.cs*",
+              "ViewState": "AgIAAB4AAAAAmpmZmZkZwDIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T15:32:45.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameResults.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\GameResults.cs",
+              "RelativeDocumentMoniker": "Math_Game\\GameResults.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\GameResults.cs [Design]*",
+              "RelativeToolTip": "Math_Game\\GameResults.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T15:31:46.128Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Quiz.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Quiz.cs",
+              "RelativeDocumentMoniker": "Math_Game\\Quiz.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Quiz.cs",
+              "RelativeToolTip": "Math_Game\\Quiz.cs",
+              "ViewState": "AgIAAEsBAABAMzMzMzMlwFEBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T15:55:33.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Quiz.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Quiz.cs",
+              "RelativeDocumentMoniker": "Math_Game\\Quiz.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Quiz.cs [Design]",
+              "RelativeToolTip": "Math_Game\\Quiz.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T14:32:24.156Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Options.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Options.cs",
+              "RelativeDocumentMoniker": "Math_Game\\Options.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Options.cs",
+              "RelativeToolTip": "Math_Game\\Options.cs",
+              "ViewState": "AgIAACYAAACYmZmZmZkwwDMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T14:27:38.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Options.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Options.cs",
+              "RelativeDocumentMoniker": "Math_Game\\Options.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Math_Game\\Math_Game\\Options.cs [Design]",
+              "RelativeToolTip": "Math_Game\\Options.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T13:55:48.948Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

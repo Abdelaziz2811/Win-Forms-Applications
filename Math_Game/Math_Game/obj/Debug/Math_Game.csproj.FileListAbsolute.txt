@@ -1,0 +1,14 @@
+C:\Users\admin\source\repos\Math_Game\Math_Game\bin\Debug\Math_Game.exe.config
+C:\Users\admin\source\repos\Math_Game\Math_Game\bin\Debug\Math_Game.exe
+C:\Users\admin\source\repos\Math_Game\Math_Game\bin\Debug\Math_Game.pdb
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.Properties.Resources.resources
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.exe
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.pdb
+C:\Users\admin\source\repos\Math_Game\Math_Game\bin\Debug\Guna.UI2.dll
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.csproj.Up2Date
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.Options.resources
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.Quiz.resources
+C:\Users\admin\source\repos\Math_Game\Math_Game\obj\Debug\Math_Game.FGameResults.resources
