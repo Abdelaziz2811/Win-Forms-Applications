@@ -1,0 +1,8 @@
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\bin\Debug\BankSystem_DAL.dll
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\bin\Debug\BankSystem_DAL.pdb
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\bin\Debug\Guna.UI2.dll
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\obj\Debug\BankSystem_DAL.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\obj\Debug\BankSystem_DAL.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\obj\Debug\BankSyst.2F4B59AA.Up2Date
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\obj\Debug\BankSystem_DAL.dll
+C:\Users\admin\source\repos\BankSystem\BankSystem_DAL\obj\Debug\BankSystem_DAL.pdb
